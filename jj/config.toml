@@ -1,0 +1,39 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Glhou"
+email = "g.louedec@live.fr"
+
+[ui]
+default-command = "log"
+page = ""
+pager = "less -FRX"
+editor = "nvim"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+
+[revsets]
+log = "present(@) | ancestors(builtin_immutable_heads().., 2) | present(trunk())"
+
+[revsets.aliases]
+"immutable_heads()" = "builtin_immutable_heads() | | (trunk().. & ~mine()) | remote_bookmarks()"
+
+[merge-tools.vimdiff]
+merge-args = ["-f", "-d", "$output", "-M",
+    "$left", "$base", "$right",
+    "-c", "wincmd J", "-c", "set modifiable",
+    "-c", "set write"]
+program = "nvim"
+merge-tool-edits-conflict-markers = true    # See below for an explanation
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = [
+  "-c", "let g:jj_diffconflicts_marker_length=$marker_length",
+  "-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right",
+]
+merge-tool-edits-conflict-markers = true
+
+[aliases]
+
+[git]
+auto-local-bookmark = true
