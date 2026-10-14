@@ -212,6 +212,10 @@ do
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
   -- Multicursor leave <C-L> alone
+  vim.keymap.set('n', '<C-[>', function()
+    local mc_ns = vim.api.nvim_create_namespace 'nvim.multicursor'
+    vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+  end)
 
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
