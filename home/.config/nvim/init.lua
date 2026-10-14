@@ -219,7 +219,7 @@ do
 
   -- Revert Q is last macro and M is multicursor
 
-  vim.keymap.set('n', '<C-[>', function()
+  vim.keymap.set('n', 'Q', vim)
 
 
   -- Diagnostic Config & Keymaps
