@@ -220,6 +220,7 @@ do
   vim.keymap.set('n', 'M', function()
     local row, col = vim.pos.cursor(0):to_extmark()
     vim.api.nvim_buf_set_extmark(0, mc_ns, row, col, {})
+    vim.cmd 'normal j'
   end)
 
   -- Diagnostic Config & Keymaps
