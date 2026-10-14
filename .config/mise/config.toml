@@ -1,0 +1,31 @@
+[bootstrap.mise_shell_activate]
+fish = "auto"
+
+[bootstrap.packages]
+'brew:fish' = 'latest'
+'brew-cask:ghostty' = { os = ['macos']}
+'dnf:ghostty' = {os = ["linux"]}
+
+[bootstrap.repos]
+"~/.dotfiles" = { url = "git@github.com:glhou/dotfiles.git"}
+
+[env]
+EDITOR = "nvim"
+
+[tools]
+go = "1.25"
+uv = "latest"
+rust-analyzer = "latest"
+npm = "latest"
+stylua = "latest"
+lua-language-server = "latest"
+neovim = "latest"
+zellij = "latest"
+
+
+[dotfiles]
+"~/.config/fish" = {}
+"~/.config/ghostty" = {}
+"~/.config/mise" = {}
+"~/.config/nvim" = {}
+"~/.config/zellij" = {}
