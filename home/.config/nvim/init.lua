@@ -211,6 +211,8 @@ do
   --  See `:help hlsearch`
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+  -- Multicursor leave <C-L> alone
+
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
   vim.diagnostic.config {
