@@ -217,6 +217,11 @@ do
     vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
   end)
 
+  -- Revert Q is last macro and M is multicursor
+
+  vim.keymap.set('n', '<C-[>', function()
+
+
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
   vim.diagnostic.config {
