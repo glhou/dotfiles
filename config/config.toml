@@ -22,6 +22,7 @@ jj = "latest"
 jjui = "latest"
 
 [dotfiles]
+"~/.config/fish" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
