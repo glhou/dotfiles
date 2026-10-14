@@ -21,6 +21,7 @@ stylua = "latest"
 lua-language-server = "latest"
 neovim = "latest"
 zellij = "latest"
+jj = "latest"
 
 
 [dotfiles]
