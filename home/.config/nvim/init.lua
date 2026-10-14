@@ -219,7 +219,11 @@ do
 
   -- Revert Q is last macro and M is multicursor
   vim.keymap.set('n', 'Q', '@@')
-  vim.keymap.set('n', 'M', vim)
+  vim.keymap.set('n', 'M', function()
+    local row, col = vim.pos.cursor(0):to_extmark()
+    vim.api.nvim_buf_set_extmark(0, ns, row, col, {})
+    vim.cmd 'j'
+  end)
 
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
