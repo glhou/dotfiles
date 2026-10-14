@@ -1,6 +1,0 @@
-[history.origin]
-url = "git@github.com:glhou/dotfiles.git"
-branch = "main"
-
-[settings.history]
-sync = "manual"
