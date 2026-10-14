@@ -218,9 +218,8 @@ do
   end)
 
   -- Revert Q is last macro and M is multicursor
-
-  vim.keymap.set('n', 'Q', vim)
-
+  vim.keymap.set('n', 'Q', '@@')
+  vim.keymap.set('n', 'M', vim)
 
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
