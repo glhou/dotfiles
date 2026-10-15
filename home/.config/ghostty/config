@@ -51,8 +51,9 @@
 #theme = 0x96f
 theme = "catppuccin-latte"
 font-family = "FiraCode Nerd Font SemBd"
-font-size = 14
+font-size = 20
 
+shell-integration-features = no-cursor
 cursor-style = block
 
 window-decoration = none
