@@ -183,7 +183,7 @@ default_mode "locked"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // Set the pane frame style when pane_frames is enabled
 // Options:
