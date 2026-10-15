@@ -1,7 +1,0 @@
-
-@τD6ϋΔΦ‡·<[ΨΘΌq§χκo£A±π¶”MΦ>ΑΉ},θ’›;&ΘMθυ1±ηLξ[=mλ@Μ~h`4ψ`hxcςƒΝζm«ύN^vtπΌΟσβ²Ip<³dC0/·eJ$φJΟ­Σ@nςBΚ¤ς
-
-ησ®ϊ3
-ύσ®ϊ3snapshot working copy"Glenns-Laptop*glenn2
-args–jj log --color always --quiet -r 'present(@) | ancestors(builtin_immutable_heads().., 2) | present(trunk())' -T 'stringify(\'_PREFIX:\' ++ separate(\'_PREFIX:\', change_id.shortest() ++ if(divergent, "/" ++ change_offset), commit_id.shortest())) ++ \' \' ++ builtin_log_compact'8Bdefault",
-[]^Δ›&LΡάΆB„§t …=•"υnTU΄™XκηvXY>b(
