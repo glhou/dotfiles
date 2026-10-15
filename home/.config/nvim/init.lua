@@ -211,6 +211,18 @@ do
   --  See `:help hlsearch`
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+  -- Multicursor leave <C-L> alone
+  local mc_ns = vim.api.nvim_create_namespace 'nvim.multicursor'
+  vim.keymap.set('n', '<C-[>', function() vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1) end)
+
+  -- Revert Q is last macro and M is multicursor
+  vim.keymap.set('n', 'Q', '@@')
+  vim.keymap.set('n', 'M', function()
+    local row, col = vim.pos.cursor(0):to_extmark()
+    vim.api.nvim_buf_set_extmark(0, mc_ns, row, col, {})
+    vim.cmd 'normal j'
+  end)
+
   -- Diagnostic Config & Keymaps
   -- See :help vim.diagnostic.Opts
   vim.diagnostic.config {

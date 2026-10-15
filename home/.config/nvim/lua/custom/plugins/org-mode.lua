@@ -14,15 +14,13 @@ require('org').setup {
   agenda_files = { '~/org/**/*.org' },
   default_notes_file = '~/org/inbox.org',
   agenda = {
-    window = 'split',
-    window_frame_fractions = { 0.3, 0.3 },
+    window = 'current',
     save_after_edit = true,
   },
   notifications = {
     enabled = true,
     reminder_time = { 30, 15, 5 },
     single_instance = true,
-    system_notification = false,
   },
   mappings = {
     agenda = {

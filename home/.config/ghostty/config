@@ -1,21 +1,59 @@
-# ~/.config/ghostty/config.toml
-
-# --- Font ---
-font-family-bold = "FiraCode Nerd Font Mono"
-font-style-bold = true
-font-thicken = true
-font-size = 15
-bold-is-bright = true
-
-# --- Cursor ---
-cursor-style = block
-shell-integration-features = no-cursor
-
-# --- Theme ---
-#theme = 0x96f
-theme = light:catppuccin-latte,dark:catppuccin-mocha
-# minimum-contrast = 2.5
+# This is the configuration file for Ghostty.
 #
-macos-titlebar-style = hidden
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/glenn/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
 
-macos-option-as-alt = true
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+#
+#theme = 0x96f
+theme = "Catppuccin Latte"
+font-family = "FiraCode Nerd Font SemBd"
+font-size = 14
+
+cursor-style = block
+
+window-decoration = none
+gtk-titlebar = false
