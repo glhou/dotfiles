@@ -128,7 +128,7 @@
       "src": "https://github.com/chipsenkbeil/org-roam.nvim"
     },
     "org.nvim": {
-      "rev": "67d26cf89353ecaaa3deb09dc2b36144143661ca",
+      "rev": "f765f1fb81b17ff51ee371b7e0b3d73fb88ac520",
       "src": "https://github.com/xheisenbugx/org.nvim"
     },
     "orgmode": {
