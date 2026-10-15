@@ -1,0 +1,31 @@
+[bootstrap.mise_shell_activate]
+fish = "auto"
+
+[bootstrap.packages]
+'brew:fish' = 'latest'
+'brew-cask:ghostty' = { os = ['macos']}
+'dnf:ghostty' = {os = ["linux"]}
+
+[env]
+EDITOR = "nvim"
+
+[tools]
+go = "1.25"
+uv = "latest"
+rust-analyzer = "latest"
+npm = "latest"
+stylua = "latest"
+lua-language-server = "latest"
+neovim = "nightly"
+zellij = "latest"
+jj = "latest"
+jjui = "latest"
+
+[dotfiles]
+"~/.config/ghostty" = { mode = "track" }
+"~/.config/mise/config.toml" = { mode = "track" }
+"~/.config/nvim" = { mode = "track" }
+"~/.config/zellij" = { mode = "track" }
+
+[bootstrap.services.mise-history]
+builtin = "history-watch"
