@@ -10,7 +10,8 @@ fish = "auto"
 EDITOR = "nvim"
 
 [tools]
-go = "1.25"
+go = "1.27"
+gopls = "latest"
 uv = "latest"
 rust-analyzer = "latest"
 npm = "latest"
