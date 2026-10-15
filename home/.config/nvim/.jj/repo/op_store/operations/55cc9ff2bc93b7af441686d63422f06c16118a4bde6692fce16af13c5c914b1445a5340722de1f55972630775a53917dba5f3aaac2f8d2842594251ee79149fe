@@ -1,8 +1,0 @@
-
-@Øƒåçäs(©…4e<È™ëfeBm¡Ó·˜ôÔù²jù;D·üt ×q×¥DÑç¶ÁØU2ñ¾‚¤ê‚@ı¨wMqh¾‰w[-dÊá£XÙã@>ÉŞN›RG{åz+Qyì²0¡ïªëè¿0äóüâZ¥ñ(¦ê
-
-çÈ°Ê“4œ
-ÿÈ°Ê“4œimport git head"Glenns-Laptop*glenn2Ÿ
-args–jj log --color always --quiet -r 'present(@) | ancestors(builtin_immutable_heads().., 2) | present(trunk())' -T 'stringify(\'_PREFIX:\' ++ separate(\'_PREFIX:\', change_id.shortest() ++ if(divergent, "/" ++ change_offset), commit_id.shortest())) ++ \' \' ++ builtin_log_compact'Bdefault"
-®5oæêè£ls
-÷Ÿ4(
