@@ -797,14 +797,6 @@ do
       },
     },
   })
-  vim.lsp.config('rust_analyzer', {
-    settings = {
-      ['rust-analyzer'] = {
-        cargo = { allFeatures = true },
-        checkOnSave = { command = 'clippy' },
-      },
-    },
-  })
 
   vim.lsp.config('lua_ls', {
     on_init = function(client)
