@@ -795,7 +795,6 @@ do
           shadow = true,
         },
         codeActionImports = true,
-        goimport = true,
       },
     },
   })
