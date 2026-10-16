@@ -855,6 +855,11 @@ do
     else
       vim.notify "go isn't installed"
     end
+    if vim.fn.executable 'goimports' == 1 then
+      vim.notify 'goimports is installed'
+    else
+      vim.notify "goimports isn't installed"
+    end
     if vim.fn.executable 'rust-analyzer' == 1 then
       vim.notify 'rust-analyzer is installed'
     else
