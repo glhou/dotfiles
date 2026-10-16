@@ -12,6 +12,7 @@ EDITOR = "nvim"
 [tools]
 go = "1.27"
 "go:golang.org/x/tools/gopls" = "latest"
+goimports = "latest"
 uv = "latest"
 rust-analyzer = "latest"
 npm = "latest"
