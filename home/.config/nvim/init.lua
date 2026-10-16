@@ -838,7 +838,7 @@ do
     },
   })
 
-  vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls' }
+  vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
 
   local function lsp_check()
     if vim.fn.executable 'uv' ~= 1 then
