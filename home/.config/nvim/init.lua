@@ -794,7 +794,7 @@ do
           unusedparams = true,
           shadow = true,
         },
-        codeActionImports = true,
+        organizeImports = true,
       },
     },
   })
