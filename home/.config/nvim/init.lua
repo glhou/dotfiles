@@ -794,15 +794,6 @@ do
           unusedparams = true,
           shadow = true,
         },
-        codeActionImports = true,
-      },
-    },
-  })
-  vim.lsp.config('rust_analyzer', {
-    settings = {
-      ['rust-analyzer'] = {
-        cargo = { allFeatures = true },
-        checkOnSave = { command = 'clippy' },
       },
     },
   })
@@ -839,7 +830,7 @@ do
     },
   })
 
-  vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls' }
+  vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
 
   local function lsp_check()
     if vim.fn.executable 'uv' ~= 1 then
@@ -855,6 +846,11 @@ do
       vim.notify 'go is installed'
     else
       vim.notify "go isn't installed"
+    end
+    if vim.fn.executable 'goimports --help' == 1 then
+      vim.notify 'goimports is installed'
+    else
+      vim.notify "goimports isn't installed"
     end
     if vim.fn.executable 'rust-analyzer' == 1 then
       vim.notify 'rust-analyzer is installed'

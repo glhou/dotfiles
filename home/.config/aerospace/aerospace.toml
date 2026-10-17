@@ -1,0 +1,81 @@
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
+
+# i3 doesn't have "normalizations" feature that why we disable them here.
+# But the feature is very helpful.
+# Normalizations eliminate all sorts of weird tree configurations that don't make sense.
+# Give normalizations a chance and enable them back.
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+
+[workspace-to-monitor-force-assignment]
+    "Dev/Browse" = "main"
+    "Slack" = "main"
+    "Postman" = "main"
+    "Other" = "secondary"
+
+[mode.main.binding]
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+    # cmd-t = "exec-and-forget open -n -a Ghostty"
+
+    # i3 wraps focus by default
+    cmd-h =         'focus --boundaries-action wrap-around-the-workspace left'
+    cmd-j =         'focus --boundaries-action wrap-around-the-workspace down'
+    cmd-k =         'focus --boundaries-action wrap-around-the-workspace up'
+    cmd-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+    cmd-shift-h = 'move left'
+    cmd-shift-j = 'move down'
+    cmd-shift-k = 'move up'
+    cmd-shift-l = 'move right'
+
+    # Consider using 'join-with' command as a 'split' replacement if you want to enable
+    # normalizations
+    cmd-minus = 'split horizontal'
+    cmd-shift-v = 'split vertical'
+
+    cmd-t = 'fullscreen'
+
+    #alt-s = 'layout v_accordion' # 'layout stacking' in i3
+    #alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+    cmd-shift-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+    cmd-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+    # Not supported, because this command is redundant in AeroSpace mental model.
+    # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
+    #alt-space = 'focus toggle_tiling_floating'
+
+    # `focus parent`/`focus child` are not yet supported, and it's not clear whether they
+    # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
+    # alt-a = 'focus parent'
+
+    cmd-1 = 'workspace Dev/Browse'
+    cmd-2 = 'workspace Slack'
+    cmd-3 = 'workspace Postman'
+    cmd-4 = 'workspace Other'
+
+    cmd-alt-1 = ['move-node-to-workspace Dev/Browse', 'workspace Dev/Browse']
+    cmd-alt-2 = ['move-node-to-workspace Slack', 'workspace Slack']
+    cmd-alt-3 = ['move-node-to-workspace Postman', 'workspace Postman']
+    cmd-alt-4 = ['move-node-to-workspace Other', 'workspace Other']
+
+
+    cmd-shift-c = 'reload-config'
+
+    cmd-shift-r = 'mode resize'
+
+[mode.resize.binding]
+    h = 'resize width +50'
+    j = 'resize height -50'
+    k = 'resize height +50'
+    l = 'resize width -50'
+    enter = 'mode main'
+    esc = 'mode main'
