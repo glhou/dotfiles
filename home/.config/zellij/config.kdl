@@ -51,6 +51,7 @@ keybinds clear-defaults=true {
   }
   session {
     bind "Ctrl d" { Detach; }
+    bind "Ctrl q" { Quit; }
     bind "s" {
         LaunchOrFocusPlugin "zellij:share" {
             floating true
