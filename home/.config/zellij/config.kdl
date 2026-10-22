@@ -50,7 +50,7 @@ keybinds clear-defaults=true {
     bind "p" { Search "up"; }
   }
   session {
-    bind "Ctrl q" { Quit; }
+    bind "Ctrl q" { Detach; }
     bind "s" {
         LaunchOrFocusPlugin "zellij:share" {
             floating true
