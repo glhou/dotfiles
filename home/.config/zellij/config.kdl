@@ -55,6 +55,7 @@ keybinds clear-defaults=true {
   resize {
     bind "Esc" { SwitchToMode "locked";}
     bind "q" { SwitchToMode "locked";}
+    bind "l" { Resize "Right";}
   }
   session {
     bind "Ctrl d" { Detach; }
