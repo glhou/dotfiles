@@ -7,6 +7,7 @@ keybinds clear-defaults=true {
     bind "p" { SwitchToMode "pane";}
     bind "t" { SwitchToMode "tab";}
     bind "v" { SwitchToMode "scroll";}
+    bind "r" { SwitchToMode "resize";}
 
     bind "s" {
         LaunchOrFocusPlugin "session-manager" {
