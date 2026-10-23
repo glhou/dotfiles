@@ -57,6 +57,8 @@ keybinds clear-defaults=true {
     bind "q" { SwitchToMode "locked";}
     bind "l" { Resize "Right";}
     bind "h" { Resize "Left";}
+    bind "k" { Resize "Up";}
+    bind "j" { Resize "Down";}
   }
   session {
     bind "Ctrl d" { Detach; }
