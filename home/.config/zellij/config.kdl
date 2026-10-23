@@ -21,6 +21,8 @@ keybinds clear-defaults=true {
     bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
     bind "h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
 
+    bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+
     bind "0" { GoToTab 1; SwitchToMode "locked"; }
     bind "1" { GoToTab 2; SwitchToMode "locked"; }
     bind "2" { GoToTab 3; SwitchToMode "locked"; }
@@ -63,7 +65,6 @@ keybinds clear-defaults=true {
   pane {
     bind "n" { NewPane; SwitchToMode "locked"; }
     bind "x" { CloseFocus; SwitchToMode "locked"; }
-    bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
   }
   tab {
     bind "x" { CloseTab; SwitchToMode "locked"; }
