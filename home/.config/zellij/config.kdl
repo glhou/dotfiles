@@ -52,6 +52,9 @@ keybinds clear-defaults=true {
     bind "n" { Search "down"; }
     bind "p" { Search "up"; }
   }
+  resize {
+    bind "Esc" { SwitchToMode "locked";}
+  }
   session {
     bind "Ctrl d" { Detach; }
     bind "Ctrl q" { Quit; }
