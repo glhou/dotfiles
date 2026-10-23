@@ -63,7 +63,7 @@ keybinds clear-defaults=true {
   pane {
     bind "n" { NewPane; SwitchToMode "locked"; }
     bind "x" { CloseFocus; SwitchToMode "locked"; }
-     bind "z" { ToggleFocusFullscreen; }
+    bind "z" { ToggleFocusFullscreen; }
   }
   tab {
     bind "x" { CloseTab; SwitchToMode "locked"; }
