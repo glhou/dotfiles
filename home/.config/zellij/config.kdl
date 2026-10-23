@@ -61,6 +61,7 @@ keybinds clear-defaults=true {
     bind "j" { Resize "Down";}
     bind "=" { Resize "Increase";}
     bind "+" { Resize "Increase";}
+    bind "-" { Resize "Decrease";}
   }
   session {
     bind "Ctrl d" { Detach; }
