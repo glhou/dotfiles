@@ -92,7 +92,7 @@ function M.setup()
     local fargs = opts.fargs
     local subcommand, args = resolve(opts.fargs)
     if not subcommand then
-      vim.notify('Unknown jj subcommand: ' .. subcommand_key, vim.log.levels.ERROR)
+      vim.notify('Unknown jj subcommand: ' .. table.concat(opts.fargs, ' '), vim.log.levels.ERROR)
       return
     end
     subcommand.impl { fargs = args }
