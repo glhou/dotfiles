@@ -33,69 +33,37 @@ end
 local subcommand_tbl = {
   default = {
     impl = function() cmd 'terminal jj log --color=always --no-pager' end,
-    opts = { desc = 'Jj logs' },
   },
   commit = {
     impl = function(opts) cmd('terminal jj commit -m "' .. table.concat(opts.fargs, ' ') .. '"') end,
-    opts = {
-      nargs = '*',
-      desc = 'Jj commit with message',
-    },
   },
   edit = {
     impl = function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end,
-    opts = {
-      nargs = 1,
-      desc = 'Jj edit',
-    },
   },
   new = {
     impl = function(opts) cmd 'terminal jj new' end,
-    opts = {
-      desc = 'Jj new',
-    },
   },
   fetch = {
     impl = function(opts) cmd 'terminal jj git fetch' end,
-    opts = {
-      desc = 'Jj git fetch',
-    },
   },
   new_dev = {
     impl = function(opts)
       vim.cmd '!jj git fetch'
       cmd 'terminal jj new dev@origin'
     end,
-    opts = {
-      desc = 'Jj new dev',
-    },
   },
   push_prev = {
     impl = function() cmd 'terminal jj git push --revision @-' end,
-    opts = {
-      desc = 'Jj push previous revision',
-    },
   },
   book = {
     advance = {
       impl = function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end,
-      opts = {
-        nargs = '?',
-        desc = 'Jj bookmark advance',
-      },
     },
     list_remote = {
       impl = function() cmd 'terminal jj bookmark list --remote origin --sort author-date- --no-pager' end,
-      opts = {
-        desc = 'Jj remote bookmarks',
-      },
     },
     track = {
       impl = function(opts) cmd('terminal jj bookmark track "' .. opts.args .. '"') end,
-      opts = {
-        nargs = 1,
-        desc = 'Jj remote bookmarks',
-      },
     },
   },
 }
