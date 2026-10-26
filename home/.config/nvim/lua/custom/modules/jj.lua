@@ -42,10 +42,10 @@ function M.setup()
     nargs = 1,
     desc = 'Jj edit',
   })
-  vim.api.nvim_create_user_command('JjNew', function(opts) cmd 'terminal jj new' end, {
+  vim.api.nvim_create_user_command('jjn', function(opts) cmd 'terminal jj new' end, {
     desc = 'Jj new',
   })
-  vim.api.nvim_create_user_command('JjFetch', function(opts) cmd 'terminal jj git fetch' end, {
+  vim.api.nvim_create_user_command('jjf', function(opts) cmd 'terminal jj git fetch' end, {
     desc = 'Jj git fetch',
   })
   vim.api.nvim_create_user_command('JjNewDev', function(opts)
