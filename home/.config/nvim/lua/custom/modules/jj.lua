@@ -61,15 +61,20 @@ local subcommand_tbl = {
       desc = 'Jj git fetch',
     },
   },
+  new_dev = {
+    impl = function(opts)
+    vim.cmd '!jj git fetch'
+    cmd 'terminal jj new dev@origin'
+  end, 
+    opts={
+    desc = 'Jj new dev',
+  }
+
+  }
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('jjNewDev', function(opts)
-    vim.cmd '!jj git fetch'
-    cmd 'terminal jj new dev@origin'
-  end, {
-    desc = 'Jj new dev',
-  })
+  vim.api.nvim_create_user_command('jjNewDev', )
   vim.api.nvim_create_user_command('JjBookAdv', function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end, {
     nargs = '?',
     desc = 'Jj bookmark advance',
