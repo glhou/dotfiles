@@ -112,7 +112,7 @@ function M.setup()
     subcommand.impl { fargs = args }
   end
 
-  vim.api.nvim_create_user_command('JJ', jj_cmd, {
+  vim.api.nvim_create_user_command('jj', jj_cmd, {
     nargs = '*',
     desc = 'Jujutsu commands',
     complete = function(arg_lead, cmdline, _)
