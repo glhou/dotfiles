@@ -90,10 +90,7 @@ end
 function M.setup()
   local function jj_cmd(opts)
     local fargs = opts.fargs
-    local subcommand_key = fargs[1] or 'default'
-    local args = #fargs > 1 and vim.list_slice(fargs, 2, #fargs) or {}
-
-    local subcommand = subcommand_tbl[subcommand_key]
+    local subcommand, args = resolve(opts.fargs)
     if not subcommand then
       vim.notify('Unknown jj subcommand: ' .. subcommand_key, vim.log.levels.ERROR)
       return
