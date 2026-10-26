@@ -48,7 +48,7 @@ function M.setup()
   vim.api.nvim_create_user_command('jjf', function(opts) cmd 'terminal jj git fetch' end, {
     desc = 'Jj git fetch',
   })
-  vim.api.nvim_create_user_command('JjNewDev', function(opts)
+  vim.api.nvim_create_user_command('jjNewDev', function(opts)
     vim.cmd '!jj git fetch'
     cmd 'terminal jj new dev@origin'
   end, {
