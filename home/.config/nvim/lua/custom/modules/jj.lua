@@ -106,10 +106,11 @@ function M.setup()
       for w in cmdline:match("^['<,'>]*JJ[!]*%s+(%S*)$"):gmatch '%S+' do
         table.insert(words, w)
       end
-      if subcmd_key then
-        return vim.iter(vim.tbl_keys(subcommand_tbl)):filter(function(k) return k:find(arg_lead) ~= nil end):totable()
+      local current = subcommand_tbl
+      for _, w in ipairs(words) do
+        if current[w] then current = current[w] end
       end
-      return {}
+      return vim.iter(vim.tbl_keys(current)):filter(function(k) return k:find(arg_lead) ~= nil end):totable()
     end,
   })
 end
