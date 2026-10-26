@@ -59,4 +59,4 @@ cursor-style = block
 window-decoration = none
 gtk-titlebar = false
 
-mouse-scroll-multiplier = 0.5
+mouse-scroll-multiplier = 1.0
