@@ -38,14 +38,14 @@ function M.setup()
     nargs = '*',
     desc = 'Jj commit with message',
   })
-  vim.api.nvim_create_user_command('jje', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
+  vim.api.nvim_create_user_command('jjedit', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
     nargs = 1,
     desc = 'Jj edit',
   })
-  vim.api.nvim_create_user_command('jjn', function(opts) cmd 'terminal jj new' end, {
+  vim.api.nvim_create_user_command('jjNew', function(opts) cmd 'terminal jj new' end, {
     desc = 'Jj new',
   })
-  vim.api.nvim_create_user_command('jjf', function(opts) cmd 'terminal jj git fetch' end, {
+  vim.api.nvim_create_user_command('jjFetch', function(opts) cmd 'terminal jj git fetch' end, {
     desc = 'Jj git fetch',
   })
   vim.api.nvim_create_user_command('jjNewDev', function(opts)
