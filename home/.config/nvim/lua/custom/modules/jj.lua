@@ -77,12 +77,15 @@ local subcommand_tbl = {
       desc = 'Jj bookmark advance',
     },
   },
+  push_prev = {
+    impl = function() cmd 'terminal jj git push --revision @-' end,
+    opts = {
+      desc = 'Jj push previous revision',
+    },
+  },
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('JjPushPrev', function() cmd 'terminal jj git push --revision @-' end, {
-    desc = 'Jj push previous revision',
-  })
   vim.api.nvim_create_user_command('JjBookRemote', function() cmd 'terminal jj bookmark list --remote origin --sort author-date- --no-pager' end, {
     desc = 'Jj remote bookmarks',
   })
