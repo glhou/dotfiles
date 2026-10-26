@@ -84,6 +84,7 @@ local function resolve(fargs)
       return nil, nil
     end
   end
+  return subcommand_tbl.default, {}
 end
 
 function M.setup()
