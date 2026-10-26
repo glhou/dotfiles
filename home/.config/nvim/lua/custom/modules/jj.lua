@@ -32,9 +32,10 @@ end
 
 local subcommand_tbl = {
   default = {
-    impl = function() cmd 'terminal jj log --color=always --no-pager' end, {
+    impl = function() cmd 'terminal jj log --color=always --no-pager' end,
+    opts={
     desc = 'Jj logs',
-  }
+    }
   }
 }
 
