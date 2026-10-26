@@ -41,16 +41,19 @@ local subcommand_tbl = {
     impl = function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end,
   },
   new = {
-    impl = function(opts) cmd 'terminal jj new' end,
+    default = {
+      impl = function(opts) cmd 'terminal jj new' end,
+    },
+    dev = {
+
+      impl = function(opts)
+        vim.cmd '!jj git fetch'
+        cmd 'terminal jj new dev@origin'
+      end,
+    },
   },
   fetch = {
     impl = function(opts) cmd 'terminal jj git fetch' end,
-  },
-  new_dev = {
-    impl = function(opts)
-      vim.cmd '!jj git fetch'
-      cmd 'terminal jj new dev@origin'
-    end,
   },
   push_prev = {
     impl = function() cmd 'terminal jj git push --revision @-' end,
