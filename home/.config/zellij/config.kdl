@@ -40,8 +40,8 @@ keybinds clear-defaults=true {
   scroll {
     bind "e" { EditScrollback; SwitchToMode "locked"; }
     bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-    bind "u" {HalfPageScrollUp;}
-    bind "d" {HalfPageScrollDown;}
+    bind "u" { HalfPageScrollUp;}
+    bind "d" { HalfPageScrollDown;}
     bind "Ctrl b" {SwitchToMode "normal";}
   }
   entersearch {
