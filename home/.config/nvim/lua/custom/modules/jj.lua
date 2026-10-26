@@ -38,7 +38,7 @@ function M.setup()
     nargs = '*',
     desc = 'Jj commit with message',
   })
-  vim.api.nvim_create_user_command('JjEdit', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
+  vim.api.nvim_create_user_command('jje', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
     nargs = 1,
     desc = 'Jj edit',
   })
