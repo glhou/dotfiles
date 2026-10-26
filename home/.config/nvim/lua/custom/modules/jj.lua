@@ -46,10 +46,7 @@ local subcommand_tbl = {
     },
     dev = {
 
-      impl = function(opts)
-        vim.cmd '!jj git fetch'
-        cmd 'terminal jj new dev@origin'
-      end,
+      impl = function(opts) cmd 'terminal jj new dev@origin' end,
     },
   },
   fetch = {
@@ -70,6 +67,19 @@ local subcommand_tbl = {
     },
   },
 }
+-- aliases
+subcommand_tbl.b = {
+  a = subcommand_tbl.book.advance,
+  l = subcommand_tbl.book.list_remote,
+  t = subcommand_tbl.book.track,
+}
+subcommand_tbl.f = subcommand_tbl.fetch
+subcommand_tbl.n = {
+  default = subcommand_tbl.new.default,
+  d = subcommand_tbl.new.dev,
+}
+subcommand_tbl.e = subcommand_tbl.edit
+subcommand_tbl.c = subcommand_tbl.commit
 
 local function resolve(fargs)
   local current = subcommand_tbl
@@ -103,15 +113,17 @@ function M.setup()
     nargs = '*',
     desc = 'Jujutsu commands',
     complete = function(arg_lead, cmdline, _)
+      local rest = cmdline:match 'JJ[!]*%s*(.*)$'
+      if not rest then return {} end
       local words = {}
-      for w in cmdline:match("^['<,'>]*JJ[!]*%s+(%S*)$"):gmatch '%S+' do
+      for w in rest:gmatch '%S+' do
         table.insert(words, w)
       end
       local current = subcommand_tbl
       for _, w in ipairs(words) do
         if current[w] then current = current[w] end
       end
-      return vim.iter(vim.tbl_keys(current)):filter(function(k) return k:find(arg_lead) ~= nil end):totable()
+      return vim.iter(vim.tbl_keys(current)):filter(function(k) return k:find(arg_lead) ~= nil and k ~= 'default' end):totable()
     end,
   })
 end
