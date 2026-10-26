@@ -71,16 +71,15 @@ local subcommand_tbl = {
     },
   },
   book_adv = {
-impl = function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end, opts={
-    nargs = '?',
-    desc = 'Jj bookmark advance',
-  }
-  }
-
+    impl = function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end,
+    opts = {
+      nargs = '?',
+      desc = 'Jj bookmark advance',
+    },
+  },
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('JjBookAdv', )
   vim.api.nvim_create_user_command('JjPushPrev', function() cmd 'terminal jj git push --revision @-' end, {
     desc = 'Jj push previous revision',
   })
