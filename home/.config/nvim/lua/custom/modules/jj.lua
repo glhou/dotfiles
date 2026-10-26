@@ -50,14 +50,14 @@ local subcommand_tbl = {
     },
   },
   new = {
-    impl = function(opts) cmd 'terminal jj new' end, opts={
-    desc = 'Jj new',
-  }
-  }
+    impl = function(opts) cmd 'terminal jj new' end,
+    opts = {
+      desc = 'Jj new',
+    },
+  },
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('jjNew', )
   vim.api.nvim_create_user_command('jjFetch', function(opts) cmd 'terminal jj git fetch' end, {
     desc = 'Jj git fetch',
   })
