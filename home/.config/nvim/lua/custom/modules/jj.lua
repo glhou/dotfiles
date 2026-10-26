@@ -30,10 +30,16 @@ function cmd(cmd)
   })
 end
 
-function M.setup()
-  vim.api.nvim_create_user_command('jj', function() cmd 'terminal jj log --color=always --no-pager' end, {
+local subcommand_tbl = {
+  default = {
+    impl = function() cmd 'terminal jj log --color=always --no-pager' end, {
     desc = 'Jj logs',
-  })
+  }
+  }
+}
+
+function M.setup()
+  vim.api.nvim_create_user_command('jj', )
   vim.api.nvim_create_user_command('jjc', function(opts) cmd('terminal jj commit -m "' .. table.concat(opts.fargs, ' ') .. '"') end, {
     nargs = '*',
     desc = 'Jj commit with message',
