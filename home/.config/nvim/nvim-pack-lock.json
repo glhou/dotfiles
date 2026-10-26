@@ -109,8 +109,7 @@
     },
     "nvim-treesitter": {
       "rev": "0153df68b44fa97a3e11696ca55cbdd7a6d42398",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
-      "version": "'main'"
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "octo.nvim": {
       "rev": "37a416818c61bd2d150498e2f601744e5329e2eb",
