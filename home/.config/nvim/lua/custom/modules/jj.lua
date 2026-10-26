@@ -84,7 +84,8 @@ local function resolve(fargs)
       return nil, nil
     end
   end
-  return subcommand_tbl.default, {}
+  if current.default and current.default.impl then return current.default, {} end
+  return nil, nil
 end
 
 function M.setup()
@@ -98,7 +99,7 @@ function M.setup()
     subcommand.impl { fargs = args }
   end
 
-  vim.api.nvim_create_user_command('jj', jj_cmd, {
+  vim.api.nvim_create_user_command('JJ', jj_cmd, {
     nargs = '*',
     desc = 'Jujutsu commands',
     complete = function(arg_lead, cmdline, _)
