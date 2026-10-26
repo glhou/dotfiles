@@ -71,6 +71,21 @@ local subcommand_tbl = {
   },
 }
 
+local function resolve(fargs)
+  local current = subcommand_tbl
+  local args = {}
+  for i, key in ipairs(fargs) do
+    if current[key] and current[key].impl then
+      args = vim.list_slice(fargs, i + 1)
+      return current[key], args
+    elseif current[key] then
+      current = current[key]
+    else
+      return nil, nil
+    end
+  end
+end
+
 function M.setup()
   local function jj_cmd(opts)
     local fargs = opts.fargs
