@@ -33,19 +33,18 @@ end
 local subcommand_tbl = {
   default = {
     impl = function() cmd 'terminal jj log --color=always --no-pager' end,
-    opts = {desc = 'Jj logs',}
+    opts = { desc = 'Jj logs' },
   },
   commit = {
-    impl = function(opts) cmd('terminal jj commit -m "' .. table.concat(opts.fargs, ' ') .. '"') end, opts={
-    nargs = '*',
-    desc = 'Jj commit with message',
-  }
-  }
+    impl = function(opts) cmd('terminal jj commit -m "' .. table.concat(opts.fargs, ' ') .. '"') end,
+    opts = {
+      nargs = '*',
+      desc = 'Jj commit with message',
+    },
+  },
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('jj', )
-  vim.api.nvim_create_user_command('jjc', )
   vim.api.nvim_create_user_command('jjedit', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
     nargs = 1,
     desc = 'Jj edit',
