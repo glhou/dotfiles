@@ -70,30 +70,32 @@ local subcommand_tbl = {
       desc = 'Jj new dev',
     },
   },
-  book_adv = {
-    impl = function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end,
-    opts = {
-      nargs = '?',
-      desc = 'Jj bookmark advance',
-    },
-  },
   push_prev = {
     impl = function() cmd 'terminal jj git push --revision @-' end,
     opts = {
       desc = 'Jj push previous revision',
     },
   },
-  book_list_remote = {
-    impl = function() cmd 'terminal jj bookmark list --remote origin --sort author-date- --no-pager' end,
-    opts = {
-      desc = 'Jj remote bookmarks',
+  book = {
+    advance = {
+      impl = function(opts) cmd('terminal jj bookmark advance "' .. opts.args .. '"') end,
+      opts = {
+        nargs = '?',
+        desc = 'Jj bookmark advance',
+      },
     },
-  },
-  book_track = {
-    impl = function(opts) cmd('terminal jj bookmark track "' .. opts.args .. '"') end,
-    opts = {
-      nargs = 1,
-      desc = 'Jj remote bookmarks',
+    list_remote = {
+      impl = function() cmd 'terminal jj bookmark list --remote origin --sort author-date- --no-pager' end,
+      opts = {
+        desc = 'Jj remote bookmarks',
+      },
+    },
+    track = {
+      impl = function(opts) cmd('terminal jj bookmark track "' .. opts.args .. '"') end,
+      opts = {
+        nargs = 1,
+        desc = 'Jj remote bookmarks',
+      },
     },
   },
 }
