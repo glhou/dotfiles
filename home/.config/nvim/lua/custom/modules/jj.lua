@@ -42,13 +42,16 @@ local subcommand_tbl = {
       desc = 'Jj commit with message',
     },
   },
+  edit = {
+    impl = function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end,
+    opts = {
+      nargs = 1,
+      desc = 'Jj edit',
+    },
+  },
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('jjedit', function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end, {
-    nargs = 1,
-    desc = 'Jj edit',
-  })
   vim.api.nvim_create_user_command('jjNew', function(opts) cmd 'terminal jj new' end, {
     desc = 'Jj new',
   })
