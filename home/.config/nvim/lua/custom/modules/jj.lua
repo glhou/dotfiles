@@ -102,7 +102,10 @@ function M.setup()
     nargs = '*',
     desc = 'Jujutsu commands',
     complete = function(arg_lead, cmdline, _)
-      local subcmd_key = cmdline:match("^['<,'>]*JJ[!]*%s+(%S*)$"):gmatch '%S+'
+      local words = {}
+      for w in cmdline:match("^['<,'>]*JJ[!]*%s+(%S*)$"):gmatch '%S+' do
+        table.insert(words, w)
+      end
       if subcmd_key then
         return vim.iter(vim.tbl_keys(subcommand_tbl)):filter(function(k) return k:find(arg_lead) ~= nil end):totable()
       end
