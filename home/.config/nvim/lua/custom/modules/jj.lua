@@ -35,7 +35,7 @@ local subcommand_tbl = {
     impl = function() cmd 'terminal jj log --color=always --no-pager' end,
   },
   commit = {
-    impl = function(opts) cmd('terminal jj commit -m "' .. table.concat(opts.fargs, ' ') .. '"') end,
+    impl = function() cmd 'terminal jj commit' end,
   },
   edit = {
     impl = function(opts) cmd('terminal jj edit "' .. opts.args .. '"') end,
