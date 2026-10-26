@@ -89,13 +89,16 @@ local subcommand_tbl = {
       desc = 'Jj remote bookmarks',
     },
   },
+  book_track = {
+impl=function(opts) cmd('terminal jj bookmark track "' .. opts.args .. '"') end, opts={
+    nargs = 1,
+    desc = 'Jj remote bookmarks',
+  }
+  }
 }
 
 function M.setup()
-  vim.api.nvim_create_user_command('JjBookTrack', function(opts) cmd('terminal jj bookmark track "' .. opts.args .. '"') end, {
-    nargs = 1,
-    desc = 'Jj remote bookmarks',
-  })
+  vim.api.nvim_create_user_command('JjBookTrack', )
 end
 
 return M
