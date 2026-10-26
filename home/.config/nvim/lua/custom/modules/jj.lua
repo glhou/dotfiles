@@ -111,6 +111,18 @@ function M.setup()
     end
     subcommand.impl { fargs = args }
   end
+
+  vim.api.nvim_create_user_command('JJ', jj_cmd, {
+    nargs = '*',
+    desc = 'Jujutsu commands',
+    complete = function(arg_lead, cmdline, _)
+      local subcmd_key = cmdline:match "^['<,'>]*JJ[!]*%s+(%S*)$"
+      if subcmd_key then
+        return vim.iter(vim.tbl_keys(subcommand_tbl)):filter(function(k) return k:find(arg_lead) ~= nil end):totable()
+      end
+      return {}
+    end,
+  })
 end
 
 return M
