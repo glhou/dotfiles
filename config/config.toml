@@ -26,6 +26,7 @@ jjui = "latest"
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
+"~/.config/jj/config.toml" = {}
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/zellij" = { mode = "track" }
