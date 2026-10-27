@@ -923,6 +923,7 @@ do
       markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
       sql = { 'pg_format' },
       go = { 'goimports' },
+      rust = { 'rustfmt', lsp_format = 'fallback' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
