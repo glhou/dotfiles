@@ -49,7 +49,7 @@ local function update(bufnr, enable_switch_marks)
   end
 end
 
-local function register_mark(char)
+local function switch_mark(char)
   local c = vim.fn.getcharstr()
   if c == nil then return end
   if c:match '%l' then
@@ -60,8 +60,8 @@ local function register_mark(char)
 end
 
 local function switch_marks()
-  register_mark 'm'
-  register_mark '`'
+  switch_mark 'm'
+  switch_mark '`'
 end
 
 ---@class MarkOpts
