@@ -50,7 +50,7 @@ local function update(bufnr, enable_switch_marks)
 end
 
 local function switch_mark(char)
-  return function()
+  vim.keymap.set('n', char, function()
     local c = vim.fn.getcharstr()
     if c == nil then return end
     if c:match '%l' then
@@ -58,7 +58,7 @@ local function switch_mark(char)
     elseif c:match '%u' then
       vim.cmd('normal! ' .. char .. c:lower())
     end
-  end
+  end)
 end
 
 local function switch_marks()
