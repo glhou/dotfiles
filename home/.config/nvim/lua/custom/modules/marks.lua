@@ -4,6 +4,9 @@ local GROUP = 'custom_marks'
 local SING_PREFIX = 'CustomMarks_'
 
 local function define_sings(enable_switch_marks)
+  local low = function(i) return string.char(97 + i) end
+  local upp = function(i) return string.char(65 + i) end
+
   for i = string.byte 'a', string.byte 'z' do
     local letter = string.char(i)
 
