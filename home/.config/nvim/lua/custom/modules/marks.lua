@@ -56,6 +56,7 @@ local function switchMarks()
 end
 
 function M.setup()
+  switchMarks()
   vim.opt.signcolumn = 'yes:1'
   define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
