@@ -63,6 +63,8 @@ local function switch_marks()
   local low = function(i) return string.char(97 + i) end
   local upp = function(i) return string.char(65 + i) end
 
+  register_mark()
+
   for i = 0, 25 do
     vim.keymap.set('n', '`' .. low(i), '`' .. upp(i))
     vim.keymap.set('n', '`' .. upp(i), '`' .. low(i))
