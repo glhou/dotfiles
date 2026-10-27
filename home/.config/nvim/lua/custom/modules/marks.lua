@@ -36,6 +36,8 @@ local function update(bufnr, enable_switch_marks)
 
       if enable_switch_marks then local letter = letter:match '%l' and letter:upper() or letter:lower() end
 
+      print(letter, line)
+
       vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = line, priority = 10 })
     end
   end
