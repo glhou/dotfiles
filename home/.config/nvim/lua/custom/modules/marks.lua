@@ -55,7 +55,7 @@ local function switchMarks()
   end
 end
 
---- @param opts struct{}
+--- @param opts s
 function M.setup(opts)
   opts = opts or {}
   local switch_marks = opts.switch_marks or ""
