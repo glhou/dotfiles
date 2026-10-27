@@ -22,7 +22,7 @@ local function define_sings()
   end
 end
 
-local function update(bufnr)
+local function update(bufnr, opts)
   vim.fn.sign_unplace(GROUP, { buffer = bufnr })
 
   for _, mark in ipairs(vim.fn.getmarklist(bufnr)) do
@@ -72,7 +72,7 @@ function M.setup(opts)
     'MarkSet',
   }, {
     group = group,
-    callback = function(args) update(args.buf) end,
+    callback = function(args) update(args.buf, opts) end,
   })
 end
 
