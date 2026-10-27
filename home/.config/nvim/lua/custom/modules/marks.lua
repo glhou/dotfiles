@@ -51,6 +51,7 @@ end
 
 local function register_mark()
   local c = vim.fn.getcharstr()
+  if c == nil then return end
   if c:match '%l' then
     vim.cmd('normal! m' .. c:upper())
   elseif c:match '%u' then
