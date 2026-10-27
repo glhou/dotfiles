@@ -58,8 +58,8 @@ end
 --- @param opts {}?
 function M.setup(opts)
   opts = opts or {}
-  local switch_marks = opts.switch_marks or true
-  if switch_marks do
+  local enable_switch_marks = opts.switch_marks or true
+  if enable_switch_marks do
     switch_marks()
   end
   vim.opt.signcolumn = 'yes:1'
