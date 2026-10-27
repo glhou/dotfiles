@@ -46,6 +46,10 @@ end
 local function switchMarks() {
   local low = function(i) return string.char(97+i) end
   local upp = function(i) return string.char(65+i) end
+
+  for i = 0, 25 do
+    vim.keymap.set("n", "m"..low(i), "m"..upp(i))
+  end
 }
 
 function M.setup()
