@@ -50,6 +50,8 @@ local function switchMarks()
   for i = 0, 25 do
     vim.keymap.set('n', 'm' .. low(i), 'm' .. upp(i))
     vim.keymap.set('n', 'm' .. upp(i), 'm' .. low(i))
+    vim.keymap.set('n', '`' .. low(i), '`' .. upp(i))
+    vim.keymap.set('n', '`' .. upp(i), '`' .. low(i))
   end
 end
 
