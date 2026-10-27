@@ -8,12 +8,7 @@ local function define_sings(enable_switch_marks)
   local upp = function(i) return string.char(65 + i) end
 
   for i = string.byte 'a', string.byte 'z' do
-    local letter = ''
-    if enable_switch_marks then
-      letter = upp(i)
-    else
-      letter = low(i)
-    end
+    local letter = enable_switch_marks and upp(i) or low(i)
 
     vim.fn.sign_define(SING_PREFIX .. letter, {
       text = letter,
