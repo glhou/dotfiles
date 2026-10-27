@@ -45,6 +45,8 @@ local function update(bufnr, enable_switch_marks)
   for _, mark in ipairs(vim.fn.getmarklist()) do
     local letter = mark.mark:match "^'([A-Z])$"
 
+    if letter == nil then continue end
+
     if enable_switch_marks then local letter = letter:match '%l' and letter:upper() or letter:lower() end
 
     if letter and mark.pos[1] == bufnr then vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = mark.pos[2], priority = 10 }) end
