@@ -70,8 +70,11 @@ local function switch_marks()
   switch_mark '`'
 end
 
+local function add_marko() end
+
 ---@class MarkOpts
 ---@field switch_marks boolean switches upper and lower case marks
+---@field marko boolean uses marko for marks per project
 
 --- @param opts MarkOpts?
 function M.setup(opts)
