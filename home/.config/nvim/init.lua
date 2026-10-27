@@ -833,6 +833,13 @@ do
     ---@type lspconfig.settings.rust_analyzer
     settings = {
       ['rust_analyzer'] = {
+        cargo = {
+          allFeatures = true,
+          loadOutDirsFromCheck = true,
+          buildScripts = {
+            enable = true,
+          },
+        },
         checkOnSave = {
           command = 'clippy',
         },
