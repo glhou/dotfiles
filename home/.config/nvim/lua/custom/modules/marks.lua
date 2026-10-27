@@ -43,7 +43,7 @@ local function update(bufnr)
   end
 end
 
-local function switchMarks()
+local function switch_marks()
   local low = function(i) return string.char(97 + i) end
   local upp = function(i) return string.char(65 + i) end
 
@@ -58,8 +58,10 @@ end
 --- @param opts {}?
 function M.setup(opts)
   opts = opts or {}
-  local switch_marks = opts.switch_marks or ''
-  switchMarks()
+  local switch_marks = opts.switch_marks or true
+  if switch_marks do
+    switch_marks()
+  end
   vim.opt.signcolumn = 'yes:1'
   define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
