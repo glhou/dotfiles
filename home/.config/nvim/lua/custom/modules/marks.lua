@@ -70,6 +70,11 @@ local function switch_marks()
   switch_mark '`'
 end
 
+local function get_shada_dir()
+  local state_dir = vim.fn.stdpath 'state'
+  return state_dir .. '/marks'
+end
+
 ---@class MarkOpts
 ---@field switch_marks boolean switches upper and lower case marks
 
