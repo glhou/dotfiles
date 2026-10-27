@@ -72,7 +72,7 @@ function M.setup(opts)
     'MarkSet',
   }, {
     group = group,
-    callback = function(args) update(args.buf) end,
+    callback = function(args) update(args.buf, opts) end,
   })
 end
 
