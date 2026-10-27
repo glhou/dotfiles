@@ -56,7 +56,7 @@ local function switch_marks()
 end
 
 ---@class MarkOpts
----@field switch_marks boolean
+---@field switch_marks boolean switches upper and lower case marks
 
 --- @param opts {}?
 function M.setup(opts)
