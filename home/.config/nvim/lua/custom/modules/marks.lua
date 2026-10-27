@@ -3,12 +3,9 @@ local M = {}
 local GROUP = 'custom_marks'
 local SING_PREFIX = 'CustomMarks_'
 
-local function define_sings(enable_switch_marks)
-  local low = function(i) return string.char(97 + i) end
-  local upp = function(i) return string.char(65 + i) end
-
+local function define_sings()
   for i = string.byte 'a', string.byte 'z' do
-    local letter = enable_switch_marks and upp(i) or low(i)
+    local letter = string.char(i)
 
     vim.fn.sign_define(SING_PREFIX .. letter, {
       text = letter,
@@ -16,7 +13,7 @@ local function define_sings(enable_switch_marks)
     })
   end
   for i = string.byte 'A', string.byte 'Z' do
-    local letter = enable_switch_marks and low(i) or upp(i)
+    local letter = string.char(i)
 
     vim.fn.sign_define(SING_PREFIX .. letter, {
       text = letter,
@@ -25,7 +22,7 @@ local function define_sings(enable_switch_marks)
   end
 end
 
-local function update(bufnr)
+local function update(bufnr, opts)
   vim.fn.sign_unplace(GROUP, { buffer = bufnr })
 
   for _, mark in ipairs(vim.fn.getmarklist(bufnr)) do
