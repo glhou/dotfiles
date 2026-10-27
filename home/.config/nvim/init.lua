@@ -829,6 +829,9 @@ do
       },
     },
   })
+  vim.lsp.config('rust_analyzer', {
+    
+  })
 
   vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
 
