@@ -59,9 +59,7 @@ end
 function M.setup(opts)
   opts = opts or {}
   local enable_switch_marks = opts.switch_marks or true
-  if (enable_switch_marks) do
-    switch_marks()
-  end
+  if enable_switch_marks then switch_marks() end
   vim.opt.signcolumn = 'yes:1'
   define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
