@@ -846,6 +846,9 @@ do
         diagnostic = {
           enable = true,
         },
+        procMacro = {
+          enable = true,
+        },
       },
     },
   })
