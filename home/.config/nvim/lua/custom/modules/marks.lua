@@ -70,23 +70,6 @@ local function switch_marks()
   switch_mark '`'
 end
 
-local function get_shada_dir()
-  local state_dir = vim.fn.stdpath 'state'
-  return state_dir .. '/marks'
-end
-
-local function get_project_id(path)
-  local safe_path = path:gsub('/', '_'):gsub('[^%w_-]', '')
-  return safe_path
-end
-
-function get_shada_path(cwd)
-  cwd = cwd or vim.fn.getcwd()
-  local project_id = get_project_id(cwd)
-  local shada_dir = get_shada_dir()
-  return shada_dir .. '/marks_' .. project_id .. '.shada'
-end
-
 ---@class MarkOpts
 ---@field switch_marks boolean switches upper and lower case marks
 
