@@ -32,11 +32,7 @@ local function update(bufnr, enable_switch_marks)
       local letter = name:sub(2)
       local line = mark.pos[2]
 
-      print(letter, line, name)
-
       if enable_switch_marks then letter = letter:match '%l' and letter:upper() or letter:lower() end
-
-      print(letter, line, name)
 
       vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = line, priority = 10 })
     end
@@ -72,7 +68,7 @@ end
 
 local function add_marko()
   vim.pack.add { 'https://github.com/mohseenrm/marko.nvim' }
-  require('marko.nvim').setup()
+  require('marko').setup()
 end
 
 ---@class MarkOpts
@@ -83,7 +79,9 @@ end
 function M.setup(opts)
   opts = opts or {}
   local enable_switch_marks = opts.switch_marks or true
+  local enable_marko = opts.marko or true
   if enable_switch_marks then switch_marks() end
+  if enable_marko then add_marko() end
   vim.opt.signcolumn = 'yes:1'
   define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
