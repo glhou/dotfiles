@@ -70,7 +70,10 @@ local function switch_marks()
   switch_mark '`'
 end
 
-local function add_marko() vim.pack.add { 'https://github.com/mohseenrm/marko.nvim' } end
+local function add_marko()
+  vim.pack.add { 'https://github.com/mohseenrm/marko.nvim' }
+  require('marko.nvim').setup()
+end
 
 ---@class MarkOpts
 ---@field switch_marks boolean switches upper and lower case marks
