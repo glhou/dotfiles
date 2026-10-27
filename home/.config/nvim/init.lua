@@ -829,15 +829,19 @@ do
       },
     },
   })
-  vim.lsp.config('rust_analyzer', {
-    settings = {
-      ['rust_analyzer'] = {
-        checkOnSave = {
-          command = 'clippy',
+  vim.lsp.config(
+    'rust_analyzer',
+    ---@type lspconfig.settings.rust_analyzer
+    {
+      settings = {
+        ['rust_analyzer'] = {
+          checkOnSave = {
+            command = 'clippy',
+          },
         },
       },
-    },
-  })
+    }
+  )
 
   vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
 
