@@ -55,6 +55,9 @@ local function switch_marks()
   end
 end
 
+---@class MarkOpts
+---@field switch_marks boolean
+
 --- @param opts {}?
 function M.setup(opts)
   opts = opts or {}
