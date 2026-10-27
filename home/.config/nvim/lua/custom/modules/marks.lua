@@ -50,17 +50,19 @@ local function update(bufnr, enable_switch_marks)
 end
 
 local function switch_mark(char)
-  local c = vim.fn.getcharstr()
-  if c == nil then return end
-  if c:match '%l' then
-    vim.cmd('normal! ' .. char .. c:upper())
-  elseif c:match '%u' then
-    vim.cmd('normal! ' .. char .. c:lower())
+  return function()
+    local c = vim.fn.getcharstr()
+    if c == nil then return end
+    if c:match '%l' then
+      vim.cmd('normal! ' .. char .. c:upper())
+    elseif c:match '%u' then
+      vim.cmd('normal! ' .. char .. c:lower())
+    end
   end
 end
 
 local function switch_marks()
-  switch_mark 'm'
+  vim.keymap.set('n', 'm', switch_mark 'm'
   switch_mark '`'
 end
 
