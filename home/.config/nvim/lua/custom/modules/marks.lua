@@ -43,6 +43,11 @@ local function update(bufnr)
   end
 end
 
+local function switchMarks() {
+  local low = function(i) return string.char(97+i) end
+  local upp = function(i) return string.char(65+i) end
+}
+
 function M.setup()
   vim.opt.signcolumn = 'yes:1'
   define_sings()
