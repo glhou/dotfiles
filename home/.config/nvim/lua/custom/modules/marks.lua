@@ -55,8 +55,10 @@ local function switchMarks()
   end
 end
 
+--- @param opts struct{}
 function M.setup(opts)
   opts = opts or {}
+  local switch_marks = opts.switch_marks or ""
   switchMarks()
   vim.opt.signcolumn = 'yes:1'
   define_sings()
