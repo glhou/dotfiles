@@ -64,7 +64,7 @@ function M.setup(opts)
   local enable_switch_marks = opts.switch_marks or true
   if enable_switch_marks then switch_marks() end
   vim.opt.signcolumn = 'yes:1'
-  define_sings(enable_switch_marks)
+  define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
   vim.api.nvim_create_autocmd({
     'BufEnter',
@@ -72,7 +72,7 @@ function M.setup(opts)
     'MarkSet',
   }, {
     group = group,
-    callback = function(args) update(args.buf, opts) end,
+    callback = function(args) update(args.buf, enable_switch_marks) end,
   })
 end
 
