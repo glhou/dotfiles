@@ -55,7 +55,7 @@ local function switchMarks()
   end
 end
 
-function M.setup()
+function M.setup(opts)
   switchMarks()
   vim.opt.signcolumn = 'yes:1'
   define_sings()
