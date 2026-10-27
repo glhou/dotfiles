@@ -49,13 +49,13 @@ local function update(bufnr, enable_switch_marks)
   end
 end
 
-local function register_mark()
+local function register_mark(char)
   local c = vim.fn.getcharstr()
   if c == nil then return end
   if c:match '%l' then
-    vim.cmd('normal! m' .. c:upper())
+    vim.cmd('normal! ' .. char .. c:upper())
   elseif c:match '%u' then
-    vim.cmd('normal! m' .. c:lower())
+    vim.cmd('normal! ' .. char .. c:lower())
   end
 end
 
