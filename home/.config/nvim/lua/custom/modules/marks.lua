@@ -3,7 +3,7 @@ local M = {}
 local GROUP = 'custom_marks'
 local SING_PREFIX = 'CustomMarks_'
 
-local function define_sings()
+local function define_sings(enable_switch_marks)
   for i = string.byte 'a', string.byte 'z' do
     local letter = string.char(i)
 
