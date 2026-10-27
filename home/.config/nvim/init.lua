@@ -843,6 +843,9 @@ do
         checkOnSave = {
           command = 'clippy',
         },
+        diagnostic = {
+          enable = true,
+        },
       },
     },
   })
