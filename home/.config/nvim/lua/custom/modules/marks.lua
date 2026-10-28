@@ -58,6 +58,7 @@ local function switch_mark(char)
     elseif c:match '%u' then
       vim.cmd('normal! ' .. char .. c:lower())
     end
+    vim.notify("No mark assigned to " .. c, vim.lo)
   end)
 end
 
