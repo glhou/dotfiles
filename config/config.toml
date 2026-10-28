@@ -33,3 +33,6 @@ jjui = "latest"
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
+
+[shell_alias]
+j = "jj"
