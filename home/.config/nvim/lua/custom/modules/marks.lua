@@ -53,11 +53,13 @@ local function switch_mark(char)
   vim.keymap.set('n', char, function()
     local c = vim.fn.getcharstr()
     if c == nil then return end
-    if c:match '%l' then
-      vim.cmd('normal! ' .. char .. c:upper())
-    elseif c:match '%u' then
-      vim.cmd('normal! ' .. char .. c:lower())
-    end
+    local success, _ = pcall(function()
+      if c:match '%l' then
+        vim.cmd('normal! ' .. char .. c:upper())
+      elseif c:match '%u' then
+        vim.cmd('normal! ' .. char .. c:lower())
+      end
+    end)
     vim.notify('No mark assigned to ' .. c, vim.log.levels.ERROR)
   end)
 end
