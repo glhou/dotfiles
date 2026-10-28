@@ -35,7 +35,7 @@ jjui = "latest"
 builtin = "history-watch"
 
 [shell_alias]
-j = "jj"
+js = "jj"
 jf = "jj git fetch"
 jn = "jj new"
 jbt = "jj branch track"
