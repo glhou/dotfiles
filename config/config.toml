@@ -37,3 +37,4 @@ builtin = "history-watch"
 [shell_alias]
 j = "jj"
 jf = "jj git fetch"
+jn = "jj new"
