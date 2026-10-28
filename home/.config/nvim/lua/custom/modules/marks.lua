@@ -60,7 +60,7 @@ local function switch_mark(char)
         vim.cmd('normal! ' .. char .. c:lower())
       end
     end)
-    vim.notify('No mark assigned to ' .. c, vim.log.levels.ERROR)
+    if not success then vim.notify('No mark assigned to ' .. c, vim.log.levels.ERROR) end
   end)
 end
 
