@@ -44,4 +44,5 @@ jblr = "jj branch list --remote origin"
 jbl = "jj branch list"
 je = "jj edit"
 jr = "jj rebase"
-
+jp = "jj git push"
+jnd = "jj new dev@origin"
