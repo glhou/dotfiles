@@ -35,5 +35,6 @@ jjui = "latest"
 builtin = "history-watch"
 
 [shell_alias]
-ghci = "gh create issue -e"
-ghd = ""
+ghci = "gh issue create -e"
+ghd = "gh issue develop"
+ghpr = "gh pr create -H $(jj current-book)"
