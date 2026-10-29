@@ -37,4 +37,4 @@ builtin = "history-watch"
 [shell_alias]
 ghic = "gh issue create -e"
 ghid = "gh issue develop"
-ghpr = "gh pr create -H \"$(jj current-book)\""
+ghprc = "gh pr create -H \"$(jj current-book)\""
