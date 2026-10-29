@@ -35,3 +35,4 @@ jjui = "latest"
 builtin = "history-watch"
 
 [shell_alias]
+ghci = "gh create issue -e"
