@@ -829,6 +829,29 @@ do
       },
     },
   })
+  vim.lsp.config('rust_analyzer', {
+    ---@type lspconfig.settings.rust_analyzer
+    settings = {
+      ['rust_analyzer'] = {
+        cargo = {
+          allFeatures = true,
+          loadOutDirsFromCheck = true,
+          buildScripts = {
+            enable = true,
+          },
+        },
+        checkOnSave = {
+          command = 'clippy',
+        },
+        diagnostic = {
+          enable = true,
+        },
+        procMacro = {
+          enable = true,
+        },
+      },
+    },
+  })
 
   vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
 
@@ -923,6 +946,7 @@ do
       markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
       sql = { 'pg_format' },
       go = { 'goimports' },
+      rust = { 'rustfmt', lsp_format = 'fallback' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --

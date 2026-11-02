@@ -55,6 +55,10 @@
       "rev": "4efaf373322d9e71eaff31164abb393417cc6f6a",
       "src": "https://github.com/ldelossa/litee.nvim"
     },
+    "marko.nvim": {
+      "rev": "7128e7a08fc20fb666c22098a47b1827b500dcd2",
+      "src": "https://github.com/mohseenrm/marko.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "7adc933dabcc7c86ae6b07aff7ee68eac398491f",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"

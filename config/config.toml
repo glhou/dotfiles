@@ -26,9 +26,15 @@ jjui = "latest"
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
+"~/.config/jj/config.toml" = {}
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/zellij" = { mode = "track" }
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
+
+[shell_alias]
+ghic = "gh issue create -e"
+ghid = "gh issue develop"
+ghprc = "gh pr create -H \"$(jj current-book)\""

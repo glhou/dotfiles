@@ -22,7 +22,7 @@ local function define_sings()
   end
 end
 
-local function update(bufnr)
+local function update(bufnr, enable_switch_marks)
   vim.fn.sign_unplace(GROUP, { buffer = bufnr })
 
   for _, mark in ipairs(vim.fn.getmarklist(bufnr)) do
@@ -32,6 +32,8 @@ local function update(bufnr)
       local letter = name:sub(2)
       local line = mark.pos[2]
 
+      if enable_switch_marks then letter = letter:match '%l' and letter:upper() or letter:lower() end
+
       vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = line, priority = 10 })
     end
   end
@@ -39,11 +41,50 @@ local function update(bufnr)
   for _, mark in ipairs(vim.fn.getmarklist()) do
     local letter = mark.mark:match "^'([A-Z])$"
 
-    if letter and mark.pos[1] == bufnr then vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = mark.pos[2], priority = 10 }) end
+    if letter ~= nil then
+      if enable_switch_marks then letter = letter:match '%l' and letter:upper() or letter:lower() end
+
+      if mark.pos[1] == bufnr then vim.fn.sign_place(0, GROUP, SING_PREFIX .. letter, bufnr, { lnum = mark.pos[2], priority = 10 }) end
+    end
   end
 end
 
-function M.setup()
+local function switch_mark(char)
+  vim.keymap.set('n', char, function()
+    local c = vim.fn.getcharstr()
+    if c == nil then return end
+    local success, _ = pcall(function()
+      if c:match '%l' then
+        vim.cmd('normal! ' .. char .. c:upper())
+      elseif c:match '%u' then
+        vim.cmd('normal! ' .. char .. c:lower())
+      end
+    end)
+    if not success then vim.notify('No mark assigned to ' .. c, vim.log.levels.ERROR) end
+  end)
+end
+
+local function switch_marks()
+  switch_mark 'm'
+  switch_mark '`'
+end
+
+local function add_marko()
+  vim.pack.add { 'https://github.com/mohseenrm/marko.nvim' }
+  require('marko').setup()
+end
+
+---@class MarkOpts
+---@field switch_marks boolean switches upper and lower case marks
+---@field marko boolean uses marko for marks per project
+
+--- @param opts MarkOpts?
+function M.setup(opts)
+  opts = opts or {}
+  local enable_switch_marks = opts.switch_marks or true
+  local enable_marko = opts.marko or true
+  if enable_switch_marks then switch_marks() end
+  if enable_marko then add_marko() end
   vim.opt.signcolumn = 'yes:1'
   define_sings()
   local group = vim.api.nvim_create_augroup(GROUP, {})
@@ -53,7 +94,7 @@ function M.setup()
     'MarkSet',
   }, {
     group = group,
-    callback = function(args) update(args.buf) end,
+    callback = function(args) update(args.buf, enable_switch_marks) end,
   })
 end
 

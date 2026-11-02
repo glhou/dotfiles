@@ -7,6 +7,7 @@ keybinds clear-defaults=true {
     bind "p" { SwitchToMode "pane";}
     bind "t" { SwitchToMode "tab";}
     bind "v" { SwitchToMode "scroll";}
+    bind "r" { SwitchToMode "resize";}
 
     bind "s" {
         LaunchOrFocusPlugin "session-manager" {
@@ -20,6 +21,8 @@ keybinds clear-defaults=true {
     bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
     bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
     bind "h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+
+    bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
 
     bind "0" { GoToTab 1; SwitchToMode "locked"; }
     bind "1" { GoToTab 2; SwitchToMode "locked"; }
@@ -37,8 +40,9 @@ keybinds clear-defaults=true {
   scroll {
     bind "e" { EditScrollback; SwitchToMode "locked"; }
     bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-    bind "u" {PageScrollUp;}
-    bind "d" {PageScrollDown;}
+    bind "u" { HalfPageScrollUp;}
+    bind "d" { HalfPageScrollDown;}
+    bind "Ctrl b" {SwitchToMode "normal";}
   }
   entersearch {
       bind "Ctrl c" { SwitchToMode "scroll"; }
@@ -49,7 +53,19 @@ keybinds clear-defaults=true {
     bind "n" { Search "down"; }
     bind "p" { Search "up"; }
   }
+  resize {
+    bind "Esc" { SwitchToMode "locked";}
+    bind "q" { SwitchToMode "locked";}
+    bind "l" { Resize "Right";}
+    bind "h" { Resize "Left";}
+    bind "k" { Resize "Up";}
+    bind "j" { Resize "Down";}
+    bind "=" { Resize "Increase";}
+    bind "+" { Resize "Increase";}
+    bind "-" { Resize "Decrease";}
+  }
   session {
+    bind "Ctrl d" { Detach; }
     bind "Ctrl q" { Quit; }
     bind "s" {
         LaunchOrFocusPlugin "zellij:share" {
@@ -394,7 +410,7 @@ pane_frames false
  
 // Whether scrolling a pane implicitly enters and exits Scroll mode
 // default is true
-// scroll_mode_sync false
+scroll_mode_sync false
  
 // Whether to enable mouse hover visual effects (frame highlight and help text)
 // default is true
