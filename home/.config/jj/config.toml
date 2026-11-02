@@ -1,0 +1,62 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[aliases]
+e = ["edit"]
+n = ["new"]
+r = ["rebase"]
+f = ["git", "fetch"]
+ba = ["b", "a"]
+bt = ["b", "t"]
+bl = ["b", "l"]
+blr = ["b", "l", "--remote", "origin"]
+bf = ["b", "forget"]
+p = ["git", "push"]
+pb = ["git", "push", "-b"]
+nd = ["new", "trunk()"]
+rbd = ["rebase","-b","@","-o","trunk()"]
+d = ["describe"]
+c = ["commit"]
+current = ["log", "-r", "current_branch()"]
+current-book = ["log", "-r", "trunk()..@", "-T", "bookmarks", "--no-graph"]
+root-book = ["log", "-r", "trunk()", "-T", "bookmarks", "--no-graph"]
+
+[ui]
+diff-instructions = false
+default-command = "log"
+pager = "less -FRX"
+paginate = "auto"
+editor = "nvim"
+merge-editor = "diffconflicts"
+
+[merge-tools.vimdiff]
+program="nvim"
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = [
+    "-c", "let g:jj_diffconflicts_marker_length=$marker_length",
+    "-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right",
+]
+merge-tool-edits-conflict-markers = true
+
+[revsets]
+log = 'present(@) | ancestors(builtin_immutable_heads().., 2) | present(trunk())'
+bookmark-advance-to = "@-"
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+"git_safe()" =  "present(@) | ancestors(custom_immutable_heads().., 2) | present(trunk())"
+"current_branch()" = "heads(::trunk() & ::@)::@"
+[template-aliases]
+sum = 'description ++ "  Local:" ++ local_bookmarks ++ "\n  Remote:" ++ remote_bookmarks ++ "\n\n"'
+default_commit_description = '''
+concat(
+  "\n",
+  "\n",
+  coalesce(
+    self.diff().files().map(|f|
+        f.status() ++ ": " ++ f.path().display()
+    ).join("\n")
+  )
+)
+'''
