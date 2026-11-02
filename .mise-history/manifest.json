@@ -20,6 +20,12 @@
       "variants": []
     },
     {
+      "path": "home/.config/jj/config.toml",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
       "path": "home/.config/nvim",
       "autosave": true,
       "encrypt": false,
@@ -35,6 +41,7 @@
   "exclude": [],
   "recipients": [],
   "permissions": {
-    "home/.config": 448
+    "home/.config": 448,
+    "home/.config/jj": 448
   }
 }
