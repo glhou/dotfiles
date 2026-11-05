@@ -19,6 +19,7 @@ c = ["commit"]
 current = ["log", "-r", "current_branch()"]
 current-book = ["log", "-r", "trunk()..@", "-T", "bookmarks", "--no-graph"]
 root-book = ["log", "-r", "trunk()", "-T", "bookmarks", "--no-graph"]
+blame = ["file", "annotate"]
 
 [ui]
 diff-instructions = false
