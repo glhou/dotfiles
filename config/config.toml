@@ -22,6 +22,7 @@ neovim = "nightly"
 zellij = "latest"
 jj = "latest"
 jjui = "latest"
+pre-commit =  "latest"
 
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
