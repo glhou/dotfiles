@@ -959,7 +959,7 @@ end
 
 -- ============================================================
 -- SECTION 8: AUTOCOMPLETE & SNIPPETS
--- mini.completion and luasnip setup
+-- blink.cmp or mini.completion and luasnip setup
 -- ============================================================
 do
   -- [[ Snippet Engine ]]
@@ -973,7 +973,8 @@ do
   -- vim.pack.add { gh 'rafamadriz/friendly-snippets' }
   -- require('luasnip.loaders.from_vscode').lazy_load()
   require('mini.fuzzy').setup {} -- required in fuzzy_filter
-  require('mini.completion').setup {}
+  -- require('mini.completion').setup {}
+  vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range ' 1.*' } }
 end
 
 -- ============================================================
