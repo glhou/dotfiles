@@ -28,6 +28,7 @@ pre-commit =  "latest"
 "~/.config/aerospace" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
 "~/.config/jj/config.toml" = { mode = "track" }
+"~/.config/kitty" = {}
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/zellij" = { mode = "track" }
