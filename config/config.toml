@@ -23,6 +23,7 @@ zellij = "latest"
 jj = "latest"
 jjui = "latest"
 pre-commit =  "latest"
+kitty = "latest"
 
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
