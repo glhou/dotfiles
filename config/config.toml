@@ -9,8 +9,6 @@ fish = "auto"
 [env]
 EDITOR = "nvim"
 
-[tool_alias]
-kitty = "github:kovidgoyal/kitty"
 
 [tools]
 go = "1.27"
