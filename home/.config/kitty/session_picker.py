@@ -31,6 +31,7 @@ def main(args: list[str]) -> str:
 
     if not fzf:
         print("fzf is not installed or could not be found.")
+        msg = "fzf is not installed or could not be found."
         return ""
 
     sessions = sorted(
