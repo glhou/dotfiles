@@ -54,7 +54,7 @@ def main(args: list[str]) -> str:
         )
 
     if not entries:
-        msg = f"No session found in {session_dir}"
+        msg = f"No session found in {session_dir} or {DEFAULT_SESSION_DIR}"
         raise ValueError(msg)
 
     str_entries = "\n".join(f"{name}\t{path}" for path, name in entries.items())
