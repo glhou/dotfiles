@@ -21,3 +21,7 @@ local function create_shell()
     M.toggle(0, false)
   end, { buffer = shell_buf })
 end
+
+function M.toggle(count, here)
+  -- Implementation
+end
