@@ -6,3 +6,12 @@ local prev_win = nil
 local function valid_buf(buf) return buf and vim.api.nvim_buf_is_valid(buf) end
 
 local function valid_win(win) return win and vim.api.nvim_win_is_valid(win) end
+
+local function create_shell()
+  vim.cmd.terminal()
+
+  shell_buf = vim.api.nvim_get_current_buf()
+
+  vim.bo[shell_buf].scrollback = -1
+  vim.api.nvim_buf_set_name(shell_buf, ':shell')
+end
