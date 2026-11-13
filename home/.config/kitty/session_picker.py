@@ -1,3 +1,7 @@
+# /// script
+# dependencies = [kitty]
+# /// 
+
 import shutil
 import subprocess
 from pathlib import Path
