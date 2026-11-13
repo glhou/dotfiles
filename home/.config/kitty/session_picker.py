@@ -30,3 +30,7 @@ def main(args: list[str]) -> str:
         ),
         key=lambda path: path.name.lower(),
     )
+
+    if not session:
+        print(f"No session found in {session_dir}")
+        return ""
