@@ -112,6 +112,9 @@ do
   -- Don't show the mode, since it's already in the status line
   vim.o.showmode = false
 
+  -- Don't show the tabline
+  vim.o.showtabline = 0
+
   -- Sync clipboard between OS and Neovim.
   --  Schedule the setting after `UiEnter` because it can increase startup-time.
   --  Remove this option if you want your OS clipboard to remain independent.
@@ -295,9 +298,8 @@ do
   --
   -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
   -- or just use <C-\><C-n> to exit terminal mode
-  vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-  vim.keymap.set('t', '<C-w>w', '<C-\\><C-o><C-w>w<Esc>', { desc = 'Next window in terminal mode' })
-  vim.keymap.set('t', '<C-w><C-w>', '<C-\\><C-o><C-w>w<Esc>', { desc = 'Next window in terminal mode' })
+  vim.keymap.set('t', '<C-[>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+  vim.keymap.set('t', '<Esc>', '<Esc>', { desc = 'Send ESC to the terminal' })
 
   -- Remove some default lsp keymaps
   vim.keymap.del('n', 'gra')
@@ -1066,8 +1068,9 @@ do
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   require('custom.modules.jj').setup()
-  require('custom.modules.marks').setup()
+  require('custom.modules.marks').setup { switch_marks = false, marko = true }
   require('custom.modules.py_refactory').setup()
+  require 'custom.modules.term_ctrl_s'
   require 'custom.plugins'
 end
 
