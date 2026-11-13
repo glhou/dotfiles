@@ -54,3 +54,9 @@ def main(args: list[str]) -> str:
         text=True,
         capture_output=True,
     )
+
+    if result.returncode != 0 or not result.stdout.strip():
+        return ""
+
+    selected = result.stdout.strip()
+    return selected.split("\t" 1)[1]
