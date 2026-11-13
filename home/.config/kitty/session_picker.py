@@ -16,3 +16,6 @@ def find_fzf() -> str | None:
 def main(args: list[str]) -> str:
     session_dir = Path(args[0]).expanduser() if args else SESSION_DIR
     fzf = find_fzf()
+
+    if not fzf:
+        print("fzf is not installed or could not be found.")
