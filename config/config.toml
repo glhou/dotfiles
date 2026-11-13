@@ -24,7 +24,7 @@ zellij = "latest"
 jj = "latest"
 jjui = "latest"
 pre-commit =  "latest"
-"github:kovidgoyal/kitty"= "latest"
+"github:kovidgoyal/kitty"= {version="latest", matching="kitty"}
 
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
