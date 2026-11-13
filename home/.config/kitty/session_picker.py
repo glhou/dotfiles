@@ -1,4 +1,5 @@
 import shutil
+import subprocess
 from pathlib import Path
 
 SESSION_DIR = Path.home() / "kitty-sessions"
@@ -37,4 +38,16 @@ def main(args: list[str]) -> str:
 
     entries = "\n".join(f"{path.relative_to(session_dir)}\t{path}" for path in sessions)
 
-    result = 
+    result = subprocess.run(
+        [
+            fzf,
+            "--prompt=session> ",
+            "--height=60%",
+            "--layout=reverse",
+            "--border=rounded",
+            "--info=inline",
+            "--with-nth=1",
+            "--delimiter=\t",
+            "--no-multi",
+        ]
+    )
