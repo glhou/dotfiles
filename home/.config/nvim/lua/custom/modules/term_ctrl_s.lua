@@ -14,4 +14,10 @@ local function create_shell()
 
   vim.bo[shell_buf].scrollback = -1
   vim.api.nvim_buf_set_name(shell_buf, ':shell')
+  vim.bo[shell_buf].buflisted = false
+
+  vim.keymap.set('t', '<C-s>', function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-\\><C-n>', true, false, true), 'n', false)
+    M.toggle(0, false)
+  end)
 end
