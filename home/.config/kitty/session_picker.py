@@ -22,7 +22,11 @@ def main(args: list[str]) -> str:
         return ""
 
     sessions = stored(
-        path
-        for path in session_dir.rglob("*")
-        if path.is_file() and any(path.name.endswith(ext) for ext in SESSION_EXTENSIONS)
+        (
+            path
+            for path in session_dir.rglob("*")
+            if path.is_file()
+            and any(path.name.endswith(ext) for ext in SESSION_EXTENSIONS)
+        ),
+        key=lambda path: path.name.lower(),
     )
