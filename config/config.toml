@@ -3,7 +3,6 @@ fish = "auto"
 
 [bootstrap.packages]
 'brew:fish' = 'latest'
-'brew:kitty' = 'latest'
 'brew-cask:ghostty' = { os = ['macos']}
 'dnf:ghostty' = {os = ["linux"]}
 
