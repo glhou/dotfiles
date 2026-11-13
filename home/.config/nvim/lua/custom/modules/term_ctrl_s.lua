@@ -176,7 +176,7 @@ function M.toggle(count, here)
         else
           -- Shell is hidden; open it in a new tab or split.
           if count == 0 then
-            vim.cmd.tab_split()
+            vim.cmd 'tab split'
           else
             vim.cmd(count .. 'split')
           end
