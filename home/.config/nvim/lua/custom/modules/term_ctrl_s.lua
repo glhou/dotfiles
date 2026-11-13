@@ -209,11 +209,11 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
   end,
 })
 
--- vim.keymap.set('n', '<C-s>', function() M.toggle(vim.v.count, false) end, {
---   desc = 'Toggle shell',
--- })
+vim.keymap.set('n', '<C-s>', function() M.toggle(vim.v.count, false) end, {
+  desc = 'Toggle shell',
+})
 
-vim.keymap.set('n', '<C-s>', function() M.toggle(vim.v.count, true) end, {
+vim.keymap.set('n', "'<C-s>", function() M.toggle(vim.v.count, true) end, {
   desc = 'Open shell in current window',
 })
 
