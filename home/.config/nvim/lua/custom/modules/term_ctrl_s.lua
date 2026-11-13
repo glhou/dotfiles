@@ -25,3 +25,7 @@ end
 function M.toggle(count, here)
   -- Implementation
 end
+
+vim.keymap.set('n', '<C-s>', function() M.toggle(vim.v.count, false) end)
+
+vim.keymap.set('n', '`<C-s>', function() M.toggle(vim.v.count, true) end)
