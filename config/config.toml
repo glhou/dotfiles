@@ -9,6 +9,11 @@ fish = "auto"
 [env]
 EDITOR = "nvim"
 
+[tasks.install-kitty]
+description = "Install Kitty terminal"
+run = """
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+"""
 
 [tools]
 go = "1.27"
