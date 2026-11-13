@@ -11,3 +11,8 @@ def find_fzf() -> str | None:
         or ("/opt/homebrew/bin/fzf" if Path("/opt/homebrew/bin/fzf").exists() else None)
         or ("/usr/local/bin/fzf" if Path("/usr/local/bin/fzf").exists() else None)
     )
+
+
+def main(args: list[str]) -> str:
+    session_dir = Path(args[0]).expanduser() if args else SESSION_DIR
+    fzf = find_fzf()
