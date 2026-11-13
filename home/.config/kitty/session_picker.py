@@ -20,3 +20,9 @@ def main(args: list[str]) -> str:
     if not fzf:
         print("fzf is not installed or could not be found.")
         return ""
+
+    sessions = stored(
+        path
+        for path in session_dir.rglob("*")
+        if path.is_file() and any(path.name.endswith(ext) for ext in SESSION_EXTENSIONS)
+    )
