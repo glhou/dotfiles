@@ -9,6 +9,10 @@ fish = "auto"
 [env]
 EDITOR = "nvim"
 
+[tasks.install-kitty]
+description = "Install Kitty terminal"
+run = "~/.config/mise/install-kitty.sh"
+
 [tools]
 go = "1.27"
 "go:golang.org/x/tools/gopls" = "latest"

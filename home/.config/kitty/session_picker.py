@@ -30,8 +30,8 @@ def main(args: list[str]) -> str:
     fzf = find_fzf()
 
     if not fzf:
-        print("fzf is not installed or could not be found.")
-        return ""
+        msg = "fzf is not installed or could not be found."
+        raise RuntimeError(msg)
 
     sessions = sorted(
         (
@@ -43,10 +43,6 @@ def main(args: list[str]) -> str:
         key=lambda path: path.name.lower(),
     )
 
-    if not sessions:
-        print(f"No session found in {session_dir}")
-        return ""
-
     entries = {
         path: f"{path.relative_to(session_dir).with_name(session_name(path))}"
         for path in sessions
@@ -56,6 +52,10 @@ def main(args: list[str]) -> str:
         entries[DEFAULT_SESSION] = (
             f"{DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR).with_name(session_name(DEFAULT_SESSION))}"
         )
+
+    if not entries:
+        msg = f"No session found in {session_dir} or {DEFAULT_SESSION_DIR}"
+        raise ValueError(msg)
 
     str_entries = "\n".join(f"{name}\t{path}" for path, name in entries.items())
 
