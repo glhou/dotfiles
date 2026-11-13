@@ -43,7 +43,9 @@ def main(args: list[str]) -> str:
     entries = "\n".join(f"{path.relative_to(session_dir)}\t{path}" for path in sessions)
 
     if DEFAULT_SESSION.exists():
-        entries.append(DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR))
+        entries += (
+            f"\n{str(DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR))}\t{DEFAULT_SESSION}"
+        )
 
     result = subprocess.run(
         [
