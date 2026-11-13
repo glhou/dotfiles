@@ -2,11 +2,12 @@
 # dependencies = [
 #   "kitty"
 # ]
-# /// 
+# ///
 
 import shutil
 import subprocess
 from pathlib import Path
+
 from kitty.boss import Boss
 
 SESSION_DIR = Path.home() / "kitty-sessions"
@@ -66,7 +67,8 @@ def main(args: list[str]) -> str:
         return ""
 
     selected = result.stdout.strip()
-    return selected.split("\t" 1)[1]
+    return selected.split("\t", 1)[1]
+
 
 def handle_result(
     args: list[str],
@@ -79,8 +81,5 @@ def handle_result(
     window = boss.window_id_map.get(target_window_id)
     if window is None:
         return
-    
-    boss.call_remote_control(
-        window,
-        ("action", "goto_session", answer)
-    )
+
+    boss.call_remote_control(window, ("action", "goto_session", answer))
