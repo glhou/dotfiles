@@ -43,7 +43,6 @@ def main(args: list[str]) -> str:
         key=lambda path: path.name.lower(),
     )
 
-
     entries = {
         path: f"{path.relative_to(session_dir).with_name(session_name(path))}"
         for path in sessions
@@ -54,8 +53,7 @@ def main(args: list[str]) -> str:
             f"{DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR).with_name(session_name(DEFAULT_SESSION))}"
         )
 
-
-    if not sessions:
+    if not entries:
         msg = f"No session found in {session_dir}"
         raise ValueError(msg)
 
