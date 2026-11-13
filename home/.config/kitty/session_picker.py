@@ -21,7 +21,7 @@ def main(args: list[str]) -> str:
         print("fzf is not installed or could not be found.")
         return ""
 
-    sessions = stored(
+    sessions = sorted(
         (
             path
             for path in session_dir.rglob("*")
@@ -36,3 +36,5 @@ def main(args: list[str]) -> str:
         return ""
 
     entries = "\n".join(f"{path.relative_to(session_dir)}\t{path}" for path in sessions)
+
+    result = 
