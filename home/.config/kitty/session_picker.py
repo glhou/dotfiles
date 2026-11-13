@@ -4,6 +4,7 @@ from pathlib import Path
 
 from kitty.boss import Boss
 
+DEFAULT_SESSION = Path.home() / ".config/kitty/default.session"
 SESSION_DIR = Path.home() / "kitty-sessions"
 SESSION_EXTENSIONS = {".kitty-session", ".kitty_session", ".session"}
 
@@ -33,6 +34,8 @@ def main(args: list[str]) -> str:
         ),
         key=lambda path: path.name.lower(),
     )
+
+    sessions.append(Path())
 
     if not sessions:
         print(f"No session found in {session_dir}")
