@@ -82,7 +82,7 @@ end
 function M.setup(opts)
   opts = opts or {}
   local enable_switch_marks = opts.switch_marks ~= nil and opts.switch_marks or true
-  local enable_marko = opts.marko or true
+  local enable_marko = opts.marko ~= nil and opts.marko or true
   if enable_switch_marks then switch_marks() end
   if enable_marko then add_marko() end
   vim.opt.signcolumn = 'yes:1'
