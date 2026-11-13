@@ -49,5 +49,8 @@ def main(args: list[str]) -> str:
             "--with-nth=1",
             "--delimiter=\t",
             "--no-multi",
-        ]
+        ],
+        input=entries,
+        text=True,
+        capture_output=True,
     )
