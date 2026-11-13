@@ -1,3 +1,5 @@
+launch --type=tab-dock --dock-edge=top --dock-size=1 --dock-skip-focus nvim
+
 new_tab
 cd ~
 launch fish
