@@ -63,8 +63,18 @@ def main(args: list[str]) -> str:
     return selected.split("\t" 1)[1]
 
 def handle_result(
-        args: list[str],
-        answer: str,
-        target_window_id: int,
-    boss: Boss
-)
+    args: list[str],
+    answer: str,
+    target_window_id: int,
+    boss: Boss,
+) -> None:
+    if not answer:
+        return
+    window = boss.window_id_map.get(target_window_id)
+    if window is None:
+        return
+    
+    boss.call_remote_control(
+        window,
+        ("action", "goto_session", answer)
+    )
