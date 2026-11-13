@@ -1068,6 +1068,7 @@ do
   require('custom.modules.jj').setup()
   require('custom.modules.marks').setup()
   require('custom.modules.py_refactory').setup()
+  require 'custom.modules.term_ctrl_s'
   require 'custom.plugins'
 end
 
