@@ -1,6 +1,7 @@
 import shutil
 import subprocess
 from pathlib import Path
+from kitty.boss import Boss
 
 SESSION_DIR = Path.home() / "kitty-sessions"
 SESSION_EXTENSIONS = {".kitty-session", ".kitty_session", ".session"}
@@ -60,3 +61,10 @@ def main(args: list[str]) -> str:
 
     selected = result.stdout.strip()
     return selected.split("\t" 1)[1]
+
+def handle_result(
+        args: list[str],
+        answer: str,
+        target_window_id: int,
+    boss: Boss
+)
