@@ -18,6 +18,13 @@ def find_fzf() -> str | None:
     )
 
 
+def session_name(path: Path) -> str:
+    for ext in SESSION_EXTENSIONS:
+        if path.name.endswith(ext):
+            return path.name[: -len(ext)]
+    return path.name
+
+
 def main(args: list[str]) -> str:
     session_dir = Path(args[1]).expanduser() if len(args) > 1 else SESSION_DIR
     fzf = find_fzf()
@@ -40,26 +47,32 @@ def main(args: list[str]) -> str:
         print(f"No session found in {session_dir}")
         return ""
 
-    entries = "\n".join(f"{path.relative_to(session_dir)}\t{path}" for path in sessions)
+    entries = {
+        path: f"{path.relative_to(session_dir).with_name(session_name(path))}"
+        for path in sessions
+    }
 
     if DEFAULT_SESSION.exists():
-        entries += (
-            f"\n{str(DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR))}\t{DEFAULT_SESSION}"
+        entries[DEFAULT_SESSION] = (
+            f"{DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR).with_name(session_name(DEFAULT_SESSION))}"
         )
+
+    str_entries = "\n".join(f"{name}\t{path}" for path, name in entries.items())
 
     result = subprocess.run(
         [
             fzf,
             "--prompt=session> ",
-            "--height=60%",
             "--layout=reverse",
             "--border=rounded",
             "--info=inline",
+            "--color=fg:-1,bg:-1",
+            "--color=fg+:-1,bg+:-1",
             "--with-nth=1",
             "--delimiter=\t",
             "--no-multi",
         ],
-        input=entries,
+        input=str_entries,
         text=True,
         capture_output=True,
     )
