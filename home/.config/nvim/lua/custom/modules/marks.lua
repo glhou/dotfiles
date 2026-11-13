@@ -65,8 +65,8 @@ local function switch_mark(char)
 end
 
 local function switch_marks()
-  --- switch_mark 'm'
-  --- switch_mark "'"
+  -- switch_mark 'm'
+  -- switch_mark "'"
 end
 
 local function add_marko()
