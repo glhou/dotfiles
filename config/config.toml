@@ -40,3 +40,6 @@ builtin = "history-watch"
 ghic = "gh issue create -e"
 ghid = "gh issue develop"
 ghprc = "gh pr create -H \"$(jj current-book)\""
+
+[tool_alias]
+kitty = "github:kovidgoyal/kitty"
