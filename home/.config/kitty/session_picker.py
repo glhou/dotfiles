@@ -54,6 +54,11 @@ def main(args: list[str]) -> str:
             f"{DEFAULT_SESSION.relative_to(DEFAULT_SESSION_DIR).with_name(session_name(DEFAULT_SESSION))}"
         )
 
+
+    if not sessions:
+        msg = f"No session found in {session_dir}"
+        raise ValueError(msg)
+
     str_entries = "\n".join(f"{name}\t{path}" for path, name in entries.items())
 
     result = subprocess.run(
