@@ -1,5 +1,7 @@
 # /// script
-# dependencies = [kitty]
+# dependencies = [
+#   "kitty"
+# ]
 # /// 
 
 import shutil
