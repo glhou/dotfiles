@@ -34,3 +34,5 @@ def main(args: list[str]) -> str:
     if not sessions:
         print(f"No session found in {session_dir}")
         return ""
+
+    entries = "\n".join(f"{path.relative_to(session_dir)}\t{path}" for path in sessions)
