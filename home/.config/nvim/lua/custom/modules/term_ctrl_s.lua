@@ -150,7 +150,7 @@ function M.toggle(count, here)
     -- Create a new shell.
     if not here then
       if count == 0 then
-        vim.cmd.tab_split()
+        vim.cmd 'tab split'
       else
         vim.cmd(count .. 'split')
       end
