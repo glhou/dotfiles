@@ -19,5 +19,5 @@ local function create_shell()
   vim.keymap.set('t', '<C-s>', function()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-\\><C-n>', true, false, true), 'n', false)
     M.toggle(0, false)
-  end)
+  end, { buffer = shell_buf })
 end
