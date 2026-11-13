@@ -11,7 +11,7 @@ EDITOR = "nvim"
 
 [tasks.install-kitty]
 description = "Install Kitty terminal"
-run = """./~/.config/mise/install-kitty.sh"""
+run = "./~/.config/mise/install-kitty.sh"
 
 [tools]
 go = "1.27"
