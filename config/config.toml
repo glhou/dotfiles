@@ -13,6 +13,7 @@ EDITOR = "nvim"
 description = "Install Kitty terminal"
 run = """
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -
 """
 
 [tools]
