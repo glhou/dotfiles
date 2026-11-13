@@ -35,7 +35,8 @@ def main(args: list[str]) -> str:
         key=lambda path: path.name.lower(),
     )
 
-    sessions.append(Path())
+    if DEFAULT_SESSION.exists():
+        sessions.append(DEFAULT_SESSION)
 
     if not sessions:
         print(f"No session found in {session_dir}")
