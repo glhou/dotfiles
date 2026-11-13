@@ -43,9 +43,6 @@ def main(args: list[str]) -> str:
         key=lambda path: path.name.lower(),
     )
 
-    if not sessions:
-        msg = f"No session found in {session_dir}"
-        raise ValueError(msg)
 
     entries = {
         path: f"{path.relative_to(session_dir).with_name(session_name(path))}"
