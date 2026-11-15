@@ -27,7 +27,6 @@ config.unix_domains = {
 		name = "unix",
 	},
 }
-
 config.default_gui_startup_args = { "connect", "unix" }
 
 -- Show which key table is active in the status area
