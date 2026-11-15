@@ -32,7 +32,7 @@ end)
 
 wezterm.on("update-left-status", function(window, pane)
   local workspace_name = window:mux_window():get_workspace()
-  if workspace_name then
+
 end
 
 config.leader = { key = "b", mods = "CTRL" }
