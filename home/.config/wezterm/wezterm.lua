@@ -21,6 +21,15 @@ config.inactive_pane_hsb = {
 	brightness = 1.0,
 }
 
+-- persistent wezterm through daemon
+--config.unix_domains = {
+    {
+        name = 'unix',
+    },
+}
+
+config.default_gui_startup_args = { 'connect', 'unix' }
+
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)
 	local name = window:active_key_table()
