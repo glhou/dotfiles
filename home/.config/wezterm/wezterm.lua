@@ -39,11 +39,8 @@ wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(name or "")
 end)
 
-wezterm.on("update-left-status", function(window)
-	window:set_left_status(wezterm.format({
-		{ Foreground = { Color = "#89b4fa" } },
-		{ Text = "  " .. window:active_workspace() .. "  " },
-	}))
+wezterm.on("update-left-status", function(window, pane)
+	window:set_left_status("  " .. window:active_workspace() .. "  ")
 end)
 
 config.leader = { key = "b", mods = "CTRL" }
