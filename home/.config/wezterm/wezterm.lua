@@ -30,6 +30,10 @@ wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(name or "")
 end)
 
+wezterm.on("update-left-status", function(window, pane)
+  local workspace_name = window:mux_window():get_workspace()
+end
+
 config.leader = { key = "b", mods = "CTRL" }
 config.keys = {
 	{
