@@ -32,6 +32,7 @@ end)
 
 wezterm.on("update-left-status", function(window, pane)
   local workspace_name = window:mux_window():get_workspace()
+  window:set_left_status(workspace_name or "")
 
 end
 
