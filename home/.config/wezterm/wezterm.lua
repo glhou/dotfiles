@@ -2,13 +2,12 @@ local wezterm = require("wezterm") ---@type Wezterm
 local config = wezterm.config_builder() ---@type Config
 local act = wezterm.action
 
-config.automatically_reload_config = true
-
 config.font_size = 16
 config.color_scheme = "Catppuccin Latte"
 config.font = wezterm.font("FiraCode Nerd Font SemBd")
 
 config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
 
 config.window_padding = {
 	left = "0.25cell",
