@@ -8,6 +8,8 @@ config.font = wezterm.font("FiraCode Nerd Font SemBd")
 
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_max_width = 128
 
 config.window_padding = {
 	left = "0.25cell",
@@ -39,9 +41,6 @@ wezterm.on("update-right-status", function(window, pane)
 		name = "LEADER: ctrl+b"
 	end
 	window:set_right_status(name or "")
-end)
-
-wezterm.on("update-left-status", function(window, pane)
 	window:set_left_status("  " .. window:active_workspace() .. "  ")
 end)
 
