@@ -2,7 +2,7 @@ local wezterm = require("wezterm") ---@type Wezterm
 local config = wezterm.config_builder() ---@type Config
 local act = wezterm.action
 
-config.automatically_reload_config = false
+config.automatically_reload_config = true
 
 config.font_size = 16
 config.color_scheme = "Catppuccin Latte"
