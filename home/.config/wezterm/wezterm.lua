@@ -31,8 +31,12 @@ config.default_gui_startup_args = { "connect", "unix" }
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)
 	local name = window:active_key_table()
+	local leader = window:leader_is_active()
 	if name then
 		name = "TABLE: " .. name
+	end
+	if leader then
+		name = "LEADER: ctrl+b"
 	end
 	window:set_right_status(name or "")
 end)
