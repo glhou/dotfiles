@@ -22,13 +22,13 @@ config.inactive_pane_hsb = {
 }
 
 -- persistent wezterm through daemon
---config.unix_domains = {
-    {
-        name = 'unix',
-    },
+config.unix_domains = {
+	{
+		name = "unix",
+	},
 }
 
-config.default_gui_startup_args = { 'connect', 'unix' }
+config.default_gui_startup_args = { "connect", "unix" }
 
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)
