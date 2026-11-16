@@ -6,6 +6,8 @@ local act = wezterm.action
 
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
+workspace_manager.zoxide_path = "zoxide"
+
 -- PLUGINS END
 
 config.font_size = 16
