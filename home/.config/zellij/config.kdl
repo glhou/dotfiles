@@ -81,9 +81,6 @@ keybinds clear-defaults=true {
         }
         SwitchToMode "locked"
     }
-    bind "l" {
-      LaunchOrFocusPlugin ""
-    }
   }
   pane {
     bind "n" { NewPane; SwitchToMode "locked"; }
