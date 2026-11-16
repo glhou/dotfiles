@@ -95,13 +95,13 @@ config.keys = {
 		mods = "LEADER",
 		action = act.TogglePaneZoomState,
 	},
-	{
-		key = "s",
-		mods = "LEADER",
-		action = act.ShowLauncherArgs({
-			flags = "FUZZY|WORKSPACES",
-		}),
-	},
+	-- {
+	-- 	key = "s",
+	-- 	mods = "LEADER",
+	-- 	action = act.ShowLauncherArgs({
+	-- 		flags = "FUZZY|WORKSPACES",
+	-- 	}),
+	-- },
 }
 
 for i = 0, 9 do
@@ -169,5 +169,11 @@ config.key_tables = {
 		},
 	},
 }
+
+-- PLUGINS
+
+local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
+
+workspace_manager.apply_to_config(config)
 
 return config
