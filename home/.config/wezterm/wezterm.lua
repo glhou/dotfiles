@@ -46,7 +46,7 @@ wezterm.on("update-right-status", function(window, pane)
 	if leader then
 		name = "LEADER: ctrl+b"
 	end
-	window:set_right_status(name or "" .. "    ")
+	window:set_right_status((name or "") .. "    ")
 	window:set_left_status("  " .. window:active_workspace() .. "  ")
 end)
 
