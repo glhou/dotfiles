@@ -6,8 +6,8 @@ local act = wezterm.action
 
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
-local mise_zoxide = io.popen("$(which mise) 2>&1")
-local zoxide_path = mise_zoxide:read("*a") or ""
+local mise_zoxide = io.popen("$(which mise) where zoxide 2>&1")
+local zoxide_path = mise_zoxide:read("*l") or ""
 mise_zoxide:close()
 
 wezterm.log_info("output: " .. zoxide_path)
