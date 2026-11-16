@@ -13,6 +13,10 @@ EDITOR = "nvim"
 description = "Install Kitty terminal"
 run = "~/.config/mise/install-kitty.sh"
 
+[tasks.fisher-zoxide]
+description = "Init zoxide in fish"
+run = "fisher install icezyclon/zoxide.fish"
+
 [tools]
 go = "1.27"
 "go:golang.org/x/tools/gopls" = "latest"
