@@ -35,7 +35,8 @@ keybinds clear-defaults=true {
     bind "8" { GoToTab 9; SwitchToMode "locked"; }
     bind "9" { GoToTab 10; SwitchToMode "locked"; }
 
-    bind "f" {LaunchPlugin "filepicker" {
+    bind "f" {
+      LaunchPlugin "filepicker" {
       close_on_selection true
     }}
 
