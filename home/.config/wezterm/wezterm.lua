@@ -47,7 +47,7 @@ wezterm.on("update-right-status", function(window, pane)
 		name = "LEADER: ctrl+b"
 	end
 	window:set_right_status(name or "")
-	window:set_left_status("  " .. window:active_workspace() .. "  ")
+	window:set_left_status("  " .. window:active_workspace() .. "       ")
 end)
 
 config.leader = { key = "b", mods = "CTRL" }
