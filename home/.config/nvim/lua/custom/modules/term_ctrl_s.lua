@@ -196,7 +196,7 @@ function M.toggle(count, here)
       return M.toggle(count, here)
     end
   end
-
+  vim.cmd.startinsert()
   previous_win = current_win
 end
 
