@@ -244,15 +244,37 @@ function M.switch()
 			exact = false,
 		}
 		refresh(window)
-		window:perform_action(
-			act.ActivateKeyTable({
-				name = TABLE,
-				one_shot = false,
-				replace_current = true,
-				prevent_fallback = true,
-			}),
-			pane
-		)
+
+		-- prevent_fallback only exists in newer WezTerm builds; try it first so
+		-- stray keys don't leak into the pane, then retry without it.
+		local ok = pcall(function()
+			window:perform_action(
+				act.ActivateKeyTable({
+					name = TABLE,
+					one_shot = false,
+					replace_current = true,
+					prevent_fallback = true,
+				}),
+				pane
+			)
+		end)
+		if not ok then
+			local ok2, err = pcall(function()
+				window:perform_action(
+					act.ActivateKeyTable({
+						name = TABLE,
+						one_shot = false,
+						replace_current = true,
+					}),
+					pane
+				)
+			end)
+			if not ok2 then
+				S = nil
+				window:set_left_status("")
+				wezterm.log_error("workspace_switcher: cannot activate key table: " .. tostring(err))
+			end
+		end
 	end)
 end
 
