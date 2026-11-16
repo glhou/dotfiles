@@ -11,7 +11,7 @@ local zoxide_path = mise_zoxide:read("*all")
 mise_zoxide:close()
 
 if zoxide_path then
-	wezterm.log_info("Found zoxide path")
+	wezterm.log_info("Found zoxide path at " .. zoxide_path)
 	workspace_manager.zoxide_path = zoxide_path
 else
 	wezterm.log_warn("Didn't find zoxide path")
