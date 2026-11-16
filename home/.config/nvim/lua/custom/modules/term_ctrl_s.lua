@@ -108,6 +108,7 @@ function M.toggle(count, here)
     vim.api.nvim_win_set_buf(0, buf)
     vim.bo[buf].buflisted = false
     previous_win = vim.api.nvim_get_current_win()
+    vim.
     return
   end
 
