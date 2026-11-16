@@ -3,6 +3,7 @@ local config = wezterm.config_builder() ---@type Config
 local act = wezterm.action
 
 -- PLUGINS START
+local workspace_fuzzy = require("plugins.workspace_fuzzy")
 
 -- PLUGINS END
 
@@ -99,11 +100,11 @@ config.keys = {
 		mods = "LEADER",
 		action = act.TogglePaneZoomState,
 	},
-	-- {
-	-- 	key = "s",
-	-- 	mods = "LEADER",
-	-- 	action = workspace_manager.workspace_switcher(),
-	-- },
+	{
+		key = "s",
+		mods = "LEADER",
+		action = workspace_fuzzy.switch(),
+	},
 }
 
 for i = 0, 9 do
