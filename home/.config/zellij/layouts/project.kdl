@@ -1,0 +1,13 @@
+layout {
+    tab name="editor" focus=true {
+        pane command="nvim" {
+            args "."
+        }
+    }
+
+    tab name="docker" {
+        pane command="docker" {
+            args "compose" "up" "--watch" "--force-recreate"
+        }
+    }
+}
