@@ -6,11 +6,10 @@ local act = wezterm.action
 
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
-local mise_zoxide = io.popen('PATH="~/.local/bin:$PATH" $(which mise) where zoxide 2>&1')
+local home = os.getenv("HOME")
+local mise_zoxide = io.popen(home .. "/.local/bin/mise which zoxide 2>&1")
 local zoxide_path = mise_zoxide:read("*l") or ""
 mise_zoxide:close()
-
-wezterm.log_info("output: " .. zoxide_path)
 
 if zoxide_path ~= nil and zoxide_path ~= "" then
 	wezterm.log_info("Found zoxide path at " .. zoxide_path)
