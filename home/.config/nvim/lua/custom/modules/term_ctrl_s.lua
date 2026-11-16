@@ -106,7 +106,6 @@ function M.toggle(count, here)
   -- Open the existing shell in the current window.
   if valid_buf(buf) and here then
     vim.api.nvim_win_set_buf(0, buf)
-    vim.api.nvim_input()
     vim.bo[buf].buflisted = false
     previous_win = vim.api.nvim_get_current_win()
     return
