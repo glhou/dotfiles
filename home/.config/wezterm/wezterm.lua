@@ -10,7 +10,7 @@ local mise_zoxide = io.popen("mise activate fish >/dev/null; mise which zoxide")
 local zoxide_path = mise_zoxide:read("*l") or ""
 mise_zoxide:close()
 
-wezterm.log_info("output: " .. mise_zoxide)
+wezterm.log_info("output: " .. zoxide_path)
 
 if zoxide_path ~= nil and zoxide_path ~= "" then
 	wezterm.log_info("Found zoxide path at " .. zoxide_path)
