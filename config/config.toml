@@ -35,6 +35,7 @@ pre-commit =  "latest"
 "~/.config/kitty" = { mode="track" }
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
+"~/.config/wezterm" = { mode = "track" }
 "~/.config/zellij" = { mode = "track" }
 
 [bootstrap.services.mise-history]
