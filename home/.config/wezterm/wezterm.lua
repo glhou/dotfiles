@@ -7,10 +7,12 @@ local act = wezterm.action
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
 local mise_zoxide = io.popen("mise where zoxide")
-local output = mise_zoxide:read("*all")
+local zoxide_path = mise_zoxide:read("*all")
 mise_zoxide:close()
 
-workspace_manager.zoxide_path = "zoxide"
+if zoxide_path then
+	workspace_manager.zoxide_path = zoxide_path
+end
 
 -- PLUGINS END
 
