@@ -62,9 +62,6 @@ function M.switch()
 				choices = choices,
 				action = wezterm.action_callback(function(w, p, id, _label)
 					if not id then
-						return -- cancelled
-					end
-					if id == NEW_ID then
 						prompt_new(w, p)
 					else
 						switch_to(w, p, id)
