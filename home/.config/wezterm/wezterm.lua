@@ -66,14 +66,14 @@ config.keys = {
 			one_shot = true,
 		}),
 	},
-	-- {
-	-- 	key = "o",
-	-- 	mods = "LEADER",
-	-- 	action = act.ActivateKeyTable({
-	-- 		name = "prefix_o",
-	-- 		one_shot = true,
-	-- 	}),
-	-- },
+	{
+		key = "o",
+		mods = "LEADER",
+		action = act.ActivateKeyTable({
+			name = "prefix_o",
+			one_shot = true,
+		}),
+	},
 	{
 		key = "l",
 		mods = "LEADER",
@@ -165,6 +165,23 @@ config.key_tables = {
 				action = wezterm.action_callback(function(window, pane, line)
 					if line then
 						wezterm.mux.rename_workspace(window:mux_window():get_workspace(), line)
+					end
+				end),
+			}),
+		},
+		{
+			key = "n",
+			mods = "LEADER",
+			action = wezterm.action.PromptInputLine({
+				description = "Workspace name",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line and line ~= "" then
+						window:perform_action(
+							wezterm.action.SwitchToWorkspace({
+								name = line,
+							}),
+							pane
+						)
 					end
 				end),
 			}),
