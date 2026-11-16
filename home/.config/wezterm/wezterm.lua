@@ -10,7 +10,7 @@ local mise_zoxide = io.popen("mise where zoxide")
 local zoxide_path = mise_zoxide:read("*all")
 mise_zoxide:close()
 
-if zoxide_path ~= nil then
+if zoxide_path ~= nil and zoxide_path ~= "" then
 	wezterm.log_info("Found zoxide path at " .. zoxide_path)
 	workspace_manager.zoxide_path = zoxide_path
 else
