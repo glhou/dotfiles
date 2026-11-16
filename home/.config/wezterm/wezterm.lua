@@ -7,7 +7,7 @@ local act = wezterm.action
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
 local mise_zoxide = io.popen("fish -lc 'mise where zoxide' @>&1")
-local zoxide_path = mise_zoxide:read("*l")
+local zoxide_path = mise_zoxide:read("*l") or ""
 mise_zoxide:close()
 
 if zoxide_path ~= nil and zoxide_path ~= "" then
