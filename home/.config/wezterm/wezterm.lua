@@ -68,14 +68,14 @@ config.keys = {
 			one_shot = true,
 		}),
 	},
-	{
-		key = "o",
-		mods = "LEADER",
-		action = act.ActivateKeyTable({
-			name = "prefix_o",
-			one_shot = true,
-		}),
-	},
+	-- {
+	-- 	key = "o",
+	-- 	mods = "LEADER",
+	-- 	action = act.ActivateKeyTable({
+	-- 		name = "prefix_o",
+	-- 		one_shot = true,
+	-- 	}),
+	-- },
 	{
 		key = "l",
 		mods = "LEADER",
