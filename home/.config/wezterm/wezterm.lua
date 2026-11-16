@@ -17,6 +17,7 @@ if zoxide_path ~= nil and zoxide_path ~= "" then
 else
 	wezterm.log_warn("Didn't find zoxide path")
 end
+workspace_manager.notifications_enabled = true
 
 -- PLUGINS END
 
