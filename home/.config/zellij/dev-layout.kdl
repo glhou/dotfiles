@@ -1,5 +1,0 @@
-layout {
-  pane name="nvim" {
-    command "nvim"
-  }
-}

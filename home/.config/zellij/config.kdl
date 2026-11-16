@@ -178,7 +178,7 @@ default_mode "locked"
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 
-// layout_dir "~/zellij-layouts"
+// layout_dir "/tmp"
  
 // The folder in which Zellij will look for themes
 // (Requires restart)
