@@ -37,8 +37,9 @@ keybinds clear-defaults=true {
 
     bind "f" {
       LaunchPlugin "filepicker" {
-      close_on_selection true
-    }}
+        close_on_selection true
+      }
+    }
 
     bind "Ctrl q" { Quit;}
   }
