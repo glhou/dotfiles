@@ -52,6 +52,7 @@ function M.switch()
 			end
 			table.insert(choices, { id = name, label = label })
 		end
+		table.insert(choices, { id = NEW_ID, label = "+ New workspace..." })
 
 		window:perform_action(
 			act.InputSelector({
@@ -62,6 +63,9 @@ function M.switch()
 				choices = choices,
 				action = wezterm.action_callback(function(w, p, id, _label)
 					if not id then
+						return -- cancelled
+					end
+					if id == NEW_ID then
 						prompt_new(w, p)
 					else
 						switch_to(w, p, id)
