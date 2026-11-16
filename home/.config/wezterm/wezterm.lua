@@ -4,7 +4,7 @@ local act = wezterm.action
 
 -- PLUGINS START
 
-local workspace_manager = wezterm.plugin.require("git@github-work:ryanmsnyder/workspace-manager.wezterm")
+local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
 -- PLUGINS END
 
