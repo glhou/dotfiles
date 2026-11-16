@@ -6,7 +6,7 @@ local act = wezterm.action
 
 local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
 
-local mise_zoxide = io.popen("mise activate fish >/dev/null; mise which zoxide")
+local mise_zoxide = io.popen("mise activate fish >/dev/null; mise which zoxide 2>&1")
 local zoxide_path = mise_zoxide:read("*a") or ""
 mise_zoxide:close()
 
