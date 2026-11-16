@@ -2,6 +2,12 @@ local wezterm = require("wezterm") ---@type Wezterm
 local config = wezterm.config_builder() ---@type Config
 local act = wezterm.action
 
+-- PLUGINS START
+
+local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
+
+-- PLUGINS END
+
 config.font_size = 16
 config.color_scheme = "Catppuccin Latte"
 config.font = wezterm.font("FiraCode Nerd Font SemBd")
@@ -95,13 +101,11 @@ config.keys = {
 		mods = "LEADER",
 		action = act.TogglePaneZoomState,
 	},
-	-- {
-	-- 	key = "s",
-	-- 	mods = "LEADER",
-	-- 	action = act.ShowLauncherArgs({
-	-- 		flags = "FUZZY|WORKSPACES",
-	-- 	}),
-	-- },
+	{
+		key = "s",
+		mods = "LEADER",
+		action = workspace_manager.workspace_switcher(),
+	},
 }
 
 for i = 0, 9 do
@@ -169,11 +173,5 @@ config.key_tables = {
 		},
 	},
 }
-
--- PLUGINS
-
-local workspace_manager = wezterm.plugin.require("https://github.com/ryanmsnyder/workspace-manager.wezterm")
-
-workspace_manager.apply_to_config(config)
 
 return config
