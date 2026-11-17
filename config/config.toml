@@ -33,6 +33,7 @@ pre-commit =  "latest"
 "~/.config/aerospace" = { mode = "track" }
 "~/.config/ghostty" = { mode = "track" }
 "~/.config/jj/config.toml" = { mode = "track" }
+"~/.config/kanata" = { mode = "track" }
 "~/.config/kitty" = { mode="track" }
 "~/.config/mise/config.toml" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
