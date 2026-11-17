@@ -4,8 +4,8 @@ local SHELL_NAME = ':shell'
 
 local shell_buf = nil
 local previous_win = nil
-local logger = vim.log.new { name = 'term_ctrl_s' }
-logger.set_level 'debug'
+M.logger = vim.log.new { name = 'term_ctrl_s' }
+M.logger.set_level 'debug'
 
 local function get_shell_buf()
   if shell_buf and vim.api.nvim_buf_is_valid(shell_buf) then return shell_buf end
