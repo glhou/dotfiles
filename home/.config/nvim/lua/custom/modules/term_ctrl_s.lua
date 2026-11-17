@@ -4,7 +4,6 @@ local SHELL_NAME = ':shell'
 
 local shell_buf = nil
 local previous_win = nil
-M.logger = vim.log.new { name = 'term_ctrl_s', level = vim.log.levels.INFO }
 
 local function get_shell_buf()
   if shell_buf and vim.api.nvim_buf_is_valid(shell_buf) then return shell_buf end
@@ -114,7 +113,6 @@ function M.toggle(count, here)
 
   -- Currently inside the shell: return to the previous window.
   if shell_buf and vim.api.nvim_get_current_buf() == shell_buf then
-    M.logger.info 'shell exists'
     local shell_win = vim.api.nvim_get_current_win()
     local shell_tab = vim.api.nvim_get_current_tabpage()
 
@@ -143,7 +141,6 @@ function M.toggle(count, here)
   local current_win = vim.api.nvim_get_current_win()
 
   if not valid_buf(shell_buf) then
-    M.logger.info 'create shell'
     -- Create a new shell.
     if not here then
       if count == 0 then
@@ -157,7 +154,6 @@ function M.toggle(count, here)
   else
     -- Prefer the previous window when it still displays the shell.
     if count == 0 and valid_win(previous_win) and vim.api.nvim_win_get_buf(previous_win) == shell_buf then
-      M.logger.info 'set prev windo'
       vim.api.nvim_set_current_win(previous_win)
     else
       local win = vim.fn.bufwinid(shell_buf)
