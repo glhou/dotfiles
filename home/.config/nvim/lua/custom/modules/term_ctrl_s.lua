@@ -136,7 +136,6 @@ function M.toggle(count, here)
         shell_buf = nil
         return M.toggle(count, here)
       end
-
       return
     end
 
