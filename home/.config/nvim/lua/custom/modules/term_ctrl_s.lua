@@ -130,6 +130,7 @@ function M.toggle(count, here)
           break
         end
       end
+      if not found then vim.cmd 'tabnew' end
     end
 
     if vim.api.nvim_get_current_buf() == buf then
