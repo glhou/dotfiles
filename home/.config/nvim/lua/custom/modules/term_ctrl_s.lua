@@ -120,13 +120,17 @@ function M.toggle(count, here)
 
     -- Find another non-shell window in the current tab.
     local windows = vim.api.nvim_tabpage_list_wins(vim.api.nvim_get_current_tabpage())
+    local found = false
 
     for _, win in ipairs(windows) do
       if win ~= shell_win and vim.api.nvim_win_get_buf(win) ~= shell_buf then
         vim.api.nvim_set_current_win(win)
+        found = true
         break
       end
     end
+
+    if not found then vim.cmd 'tab new' end
 
     if is_stale(shell_buf) then
       vim.api.nvim_buf_delete(shell_buf, { force = true })
