@@ -2,6 +2,11 @@ local wezterm = require("wezterm") ---@type Wezterm
 local config = wezterm.config_builder() ---@type Config
 local act = wezterm.action
 
+-- PLUGINS START
+local workspace_fuzzy = require("plugins.workspace_fuzzy")
+
+-- PLUGINS END
+
 config.font_size = 16
 config.color_scheme = "Catppuccin Latte"
 config.font = wezterm.font("FiraCode Nerd Font SemBd")
@@ -40,8 +45,8 @@ wezterm.on("update-right-status", function(window, pane)
 	if leader then
 		name = "LEADER: ctrl+b"
 	end
-	window:set_right_status(name or "")
-	window:set_left_status("  " .. window:active_workspace() .. "  ")
+	window:set_right_status(" " .. (name or "") .. " ")
+	window:set_left_status(" " .. window:active_workspace() .. " ")
 end)
 
 config.leader = { key = "b", mods = "CTRL" }
@@ -98,9 +103,7 @@ config.keys = {
 	{
 		key = "s",
 		mods = "LEADER",
-		action = act.ShowLauncherArgs({
-			flags = "FUZZY|WORKSPACES",
-		}),
+		action = workspace_fuzzy.switch(),
 	},
 }
 
@@ -163,6 +166,23 @@ config.key_tables = {
 				action = wezterm.action_callback(function(window, pane, line)
 					if line then
 						wezterm.mux.rename_workspace(window:mux_window():get_workspace(), line)
+					end
+				end),
+			}),
+		},
+		{
+			key = "n",
+			mods = "LEADER",
+			action = wezterm.action.PromptInputLine({
+				description = "Workspace name",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line and line ~= "" then
+						window:perform_action(
+							wezterm.action.SwitchToWorkspace({
+								name = line,
+							}),
+							pane
+						)
 					end
 				end),
 			}),

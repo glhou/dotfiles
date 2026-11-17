@@ -101,43 +101,40 @@ function M.toggle(count, here)
   count = count or 0
   here = here or false
 
-  local buf = get_shell_buf()
+  local shell_buf = get_shell_buf()
 
   -- Open the existing shell in the current window.
-  if valid_buf(buf) and here then
-    vim.api.nvim_win_set_buf(0, buf)
-    vim.bo[buf].buflisted = false
+  if valid_buf(shell_buf) and here then
+    vim.api.nvim_win_set_buf(0, shell_buf)
+    vim.bo[shell_buf].buflisted = false
     previous_win = vim.api.nvim_get_current_win()
     return
   end
 
   -- Currently inside the shell: return to the previous window.
-  if buf and vim.api.nvim_get_current_buf() == buf then
+  if shell_buf and vim.api.nvim_get_current_buf() == shell_buf then
     local shell_win = vim.api.nvim_get_current_win()
-    local shell_tab = vim.api.nvim_get_current_tabpage()
 
-    close_shell_tab_if_needed()
+    if #vim.api.nvim_list_tabpages() == 1 then
+      vim.cmd.tabnew()
+    else
+      close_shell_tab_if_needed()
 
-    if vim.api.nvim_get_current_buf() == buf then
       -- Find another non-shell window in the current tab.
       local windows = vim.api.nvim_tabpage_list_wins(vim.api.nvim_get_current_tabpage())
 
       for _, win in ipairs(windows) do
-        if vim.api.nvim_win_get_buf(win) ~= buf then
+        if win ~= shell_win and vim.api.nvim_win_get_buf(win) ~= shell_buf then
           vim.api.nvim_set_current_win(win)
           break
         end
       end
     end
 
-    if vim.api.nvim_get_current_buf() == buf then
-      if is_stale(buf) then
-        vim.api.nvim_buf_delete(buf, { force = true })
-        shell_buf = nil
-        return M.toggle(count, here)
-      end
-
-      return
+    if is_stale(shell_buf) then
+      vim.api.nvim_buf_delete(shell_buf, { force = true })
+      shell_buf = nil
+      return M.toggle(count, here)
     end
 
     previous_win = shell_win
@@ -146,7 +143,7 @@ function M.toggle(count, here)
 
   local current_win = vim.api.nvim_get_current_win()
 
-  if not valid_buf(buf) then
+  if not valid_buf(shell_buf) then
     -- Create a new shell.
     if not here then
       if count == 0 then
@@ -159,16 +156,16 @@ function M.toggle(count, here)
     create_shell()
   else
     -- Prefer the previous window when it still displays the shell.
-    if count == 0 and valid_win(previous_win) and vim.api.nvim_win_get_buf(previous_win) == buf then
+    if count == 0 and valid_win(previous_win) and vim.api.nvim_win_get_buf(previous_win) == shell_buf then
       vim.api.nvim_set_current_win(previous_win)
     else
-      local win = vim.fn.bufwinid(buf)
+      local win = vim.fn.bufwinid(shell_buf)
 
       if count == 0 and win > 0 then
         -- Shell exists in the current tab.
         vim.api.nvim_set_current_win(win)
       else
-        local windows = vim.fn.win_findbuf(buf)
+        local windows = vim.fn.win_findbuf(shell_buf)
 
         if count == 0 and #windows > 0 then
           -- Shell exists in another tab.
@@ -181,22 +178,22 @@ function M.toggle(count, here)
             vim.cmd(count .. 'split')
           end
 
-          vim.api.nvim_win_set_buf(0, buf)
+          vim.api.nvim_win_set_buf(0, shell_buf)
         end
       end
     end
 
-    vim.bo[buf].buflisted = false
+    vim.bo[shell_buf].buflisted = false
 
     -- Clean up stale buffers restored by sessions.
-    if is_stale(buf) then
+    if is_stale(shell_buf) then
       switch_to_previous()
-      vim.api.nvim_buf_delete(buf, { force = true })
+      vim.api.nvim_buf_delete(shell_buf, { force = true })
       shell_buf = nil
       return M.toggle(count, here)
     end
   end
-
+  vim.cmd.startinsert()
   previous_win = current_win
 end
 
