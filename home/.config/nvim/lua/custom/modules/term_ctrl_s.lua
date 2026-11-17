@@ -143,6 +143,7 @@ function M.toggle(count, here)
   local current_win = vim.api.nvim_get_current_win()
 
   if not valid_buf(shell_buf) then
+    logger.info 'create shell'
     -- Create a new shell.
     if not here then
       if count == 0 then
