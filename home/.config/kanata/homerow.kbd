@@ -1,5 +1,6 @@
 (defcfg
   process-unmapped-keys yes
+  tap-hold-require-prior-idle yes
 )
 
 (defsrc
