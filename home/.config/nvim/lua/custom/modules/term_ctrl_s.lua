@@ -135,8 +135,6 @@ function M.toggle(count, here)
         vim.api.nvim_buf_delete(buf, { force = true })
         shell_buf = nil
         return M.toggle(count, here)
-      else
-        vim.cmd 'tab new'
       end
       return
     end
