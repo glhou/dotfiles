@@ -14,14 +14,14 @@
 )
 
 (defalias
-  a-mod (tap-hold $tap-time $hold-time a lmet)
-  s-mod (tap-hold $tap-time $hold-time s lalt)
-  d-mod (tap-hold $tap-time $hold-time d lsft)
-  f-mod (tap-hold $tap-time $hold-time f lctl)
-  j-mod (tap-hold $tap-time $hold-time j rctl)
-  k-mod (tap-hold $tap-time $hold-time k rsft)
-  l-mod (tap-hold $tap-time $hold-time l ralt)
-  ;-mod (tap-hold $tap-time $hold-time ; rmet)
+  a-mod (tap-hold-press $tap-time $hold-time a lmet)
+  s-mod (tap-hold-press $tap-time $hold-time s lalt)
+  d-mod (tap-hold-press $tap-time $hold-time d lsft)
+  f-mod (tap-hold-press $tap-time $hold-time f lctl)
+  j-mod (tap-hold-press $tap-time $hold-time j rctl)
+  k-mod (tap-hold-press $tap-time $hold-time k rsft)
+  l-mod (tap-hold-press $tap-time $hold-time l ralt)
+  ;-mod (tap-hold-press $tap-time $hold-time ; rmet)
 )
 
 (deflayer base
