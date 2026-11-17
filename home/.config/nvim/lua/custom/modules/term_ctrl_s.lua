@@ -124,7 +124,7 @@ function M.toggle(count, here)
       local target_win
 
       for _, win in ipairs(windows) do
-        if vim.api.nvim_win_get_buf(win) ~= buf then
+        if win ~= shell_win and vim.api.nvim_win_get_buf(win) ~= buf then
           target_win = win
           break
         end
