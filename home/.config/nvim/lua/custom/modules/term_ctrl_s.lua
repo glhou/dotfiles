@@ -118,25 +118,20 @@ function M.toggle(count, here)
 
     close_shell_tab_if_needed()
 
-    if vim.api.nvim_get_current_buf() == shell_buf then
-      -- Find another non-shell window in the current tab.
-      local windows = vim.api.nvim_tabpage_list_wins(vim.api.nvim_get_current_tabpage())
+    -- Find another non-shell window in the current tab.
+    local windows = vim.api.nvim_tabpage_list_wins(vim.api.nvim_get_current_tabpage())
 
-      for _, win in ipairs(windows) do
-        if win ~= shell_win and vim.api.nvim_win_get_buf(win) ~= shell_buf then
-          vim.api.nvim_set_current_win(win)
-          break
-        end
+    for _, win in ipairs(windows) do
+      if win ~= shell_win and vim.api.nvim_win_get_buf(win) ~= shell_buf then
+        vim.api.nvim_set_current_win(win)
+        break
       end
     end
 
-    if vim.api.nvim_get_current_buf() == shell_buf then
-      if is_stale(shell_buf) then
-        vim.api.nvim_buf_delete(shell_buf, { force = true })
-        shell_buf = nil
-        return M.toggle(count, here)
-      end
-      return
+    if is_stale(shell_buf) then
+      vim.api.nvim_buf_delete(shell_buf, { force = true })
+      shell_buf = nil
+      return M.toggle(count, here)
     end
 
     previous_win = shell_win
