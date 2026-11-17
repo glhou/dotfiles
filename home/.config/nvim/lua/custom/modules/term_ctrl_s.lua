@@ -160,8 +160,7 @@ function M.toggle(count, here)
 
       if count == 0 and win > 0 then
         -- Shell exists in the current tab.
-        vim.cmd 'tab new'
-        -- vim.api.nvim_set_current_win(win)
+        vim.api.nvim_set_current_win(win)
       else
         local windows = vim.fn.win_findbuf(shell_buf)
 
