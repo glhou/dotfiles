@@ -6,6 +6,7 @@
   a s d f
   j k l ;
   caps
+  n
 )
 
 (defvar
@@ -26,8 +27,8 @@
 )
 
 (deflayer super
-  @a-mod @s-mod @d-mod [
-  ] @k-mod @l-mod @;-mod
+  @a-mod @s-mod @d-mod @f-mod
+  @j-mod @k-mod @l-mod @;-mod
   grv
 )
 
@@ -35,4 +36,5 @@
   @a-mod @s-mod @d-mod @f-mod
   @j-mod @k-mod @l-mod @;-mod
   grv
+  @super-mod
 )
