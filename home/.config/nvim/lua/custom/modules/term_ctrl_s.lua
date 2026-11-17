@@ -126,6 +126,7 @@ function M.toggle(count, here)
       for _, win in ipairs(windows) do
         if vim.api.nvim_win_get_buf(win) ~= buf then
           vim.api.nvim_set_current_win(win)
+          found = true
           break
         end
       end
