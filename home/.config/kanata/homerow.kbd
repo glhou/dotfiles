@@ -22,6 +22,7 @@
   k-mod (tap-hold $tap-time $hold-time k rsft)
   l-mod (tap-hold $tap-time $hold-time l ralt)
   ;-mod (tap-hold $tap-time $hold-time ; rmet)
+  super-mod (layer-while-held super)
 )
 
 (deflayer base
