@@ -29,6 +29,8 @@ local function switch_to_previous()
   if valid_win(previous_win) then
     vim.api.nvim_set_current_win(previous_win)
     return
+  else
+    vim.cmd 'tab new'
   end
 
   vim.cmd.wincmd 'p'
