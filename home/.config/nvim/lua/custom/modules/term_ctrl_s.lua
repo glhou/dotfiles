@@ -114,6 +114,7 @@ function M.toggle(count, here)
 
   -- Currently inside the shell: return to the previous window.
   if shell_buf and vim.api.nvim_get_current_buf() == shell_buf then
+    logger.info 'shell exists'
     local shell_win = vim.api.nvim_get_current_win()
     local shell_tab = vim.api.nvim_get_current_tabpage()
 
