@@ -157,6 +157,7 @@ function M.toggle(count, here)
   else
     -- Prefer the previous window when it still displays the shell.
     if count == 0 and valid_win(previous_win) and vim.api.nvim_win_get_buf(previous_win) == shell_buf then
+      logger.info 'set prev windo'
       vim.api.nvim_set_current_win(previous_win)
     else
       local win = vim.fn.bufwinid(shell_buf)
