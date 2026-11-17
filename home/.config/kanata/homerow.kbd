@@ -15,7 +15,7 @@
 
 (defalias
   a-mod (tap-hold $tap-time $hold-time a lmet)
-  s-mod (tap-hold $tap-time $hold-time s lalt)
+  s-mod (tap-hold-release $tap-time $hold-time s lalt)
   d-mod (tap-hold $tap-time $hold-time d lsft)
   f-mod (tap-hold $tap-time $hold-time f lctl)
   j-mod (tap-hold $tap-time $hold-time j rctl)
