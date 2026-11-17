@@ -129,6 +129,12 @@ function M.toggle(count, here)
           break
         end
       end
+
+      if target_win then
+        vim.api.nvim_set_current_buf(target_win)
+      else
+        vim.cmd 'tab new'
+      end
     end
 
     if vim.api.nvim_get_current_buf() == buf then
