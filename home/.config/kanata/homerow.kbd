@@ -9,6 +9,7 @@
   caps
   lmet lalt lsft lctl
   rctl rsft ralt rmet
+  🔅   🔆   nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
 )
 
 (defvar
@@ -33,4 +34,5 @@
   grv
   XX XX XX XX
   XX XX XX XX
+  🔅   🔆   nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
 )
