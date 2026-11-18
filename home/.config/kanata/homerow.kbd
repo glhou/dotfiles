@@ -7,6 +7,8 @@
   a s d f
   j k l ;
   caps
+  lmet lalt lsft lctl
+  rctl rsft ralt rmet
 )
 
 (defvar
@@ -29,4 +31,6 @@
   @a-mod @s-mod @d-mod @f-mod
   @j-mod @k-mod @l-mod @;-mod
   grv
+  XX XX XX XX
+  XX XX XX XX
 )
