@@ -7,8 +7,6 @@
   a s d f
   j k l ;
   caps
-  lmet lalt lsft lctl
-  rctl rsft ralt rmet
   f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
 )
 
@@ -32,7 +30,5 @@
   @a-mod @s-mod @d-mod @f-mod
   @j-mod @k-mod @l-mod @;-mod
   grv
-  XX XX lsft XX
-  XX XX XX XX
   🔅   🔆   nop0 nop1 nop2 nop3 ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
 )
