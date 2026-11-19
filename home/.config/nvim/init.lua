@@ -866,6 +866,7 @@ do
       vim.notify 'uv is installed'
       vim.cmd '!uv tool install ruff'
       vim.cmd '!uv tool install pyrefly'
+      vim.cmd '!uv tool install ty'
       vim.cmd '!uv tool install djlint'
       vim.cmd '!uv tool install jinja-lsp'
     end
