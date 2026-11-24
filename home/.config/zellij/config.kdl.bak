@@ -664,3 +664,5 @@ scroll_mode_sync false
 // host_notification_protocol "auto"
 show_startup_tips false
 nested_session_handling "never"
+enforce_https_for_localhost true
+dangerously_allow_web_serving_without_a_certificate true
