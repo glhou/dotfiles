@@ -138,8 +138,8 @@ web_client {
 terminal {
   font "FiraCode Nerd Font SemBd"
   font_size 16
-  // line_height 1
-  padding 0
+  line_height 1
+  //padding 0
   opacity 1.0
   blur true
   cursor_style ="block"
