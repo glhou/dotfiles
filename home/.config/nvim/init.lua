@@ -855,7 +855,9 @@ do
     },
   })
 
-  vim.lsp.enable { 'ruff', 'pyrefly', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
+  vim.lsp.enable { 'ruff', 'vtsls', 'eslint', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
+  vim.lsp.enable 'pyrefly'
+  -- vim.lsp.enable 'ty'
 
   local function lsp_check()
     if vim.fn.executable 'uv' ~= 1 then
@@ -864,6 +866,7 @@ do
       vim.notify 'uv is installed'
       vim.cmd '!uv tool install ruff'
       vim.cmd '!uv tool install pyrefly'
+      -- vim.cmd '!uv tool install ty'
       vim.cmd '!uv tool install djlint'
       vim.cmd '!uv tool install jinja-lsp'
     end

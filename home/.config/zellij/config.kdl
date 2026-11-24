@@ -134,6 +134,16 @@ load_plugins {
 web_client {
     font "monospace"
 }
+
+terminal {
+  font "FiraCode Nerd Font"
+  font_weight "semibold"
+  font_size 16
+  line_height 1
+  padding 0
+  cursor_style "block"
+  terminal_requests "existing_session"
+}
  
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
@@ -148,11 +158,157 @@ web_client {
 //   - false
 // 
 // osc8_hyperlinks true
+themes {
+    custom-latte {
+        text_unselected {
+            base 76 79 105
+            background 239 241 245
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 210 15 57
+        }
+        text_selected {
+            base 76 79 105
+            background 172 176 190
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        ribbon_selected {
+            base 239 241 245
+            background 64 160 43
+            emphasis_0 210 15 57
+            emphasis_1 254 100 11
+            emphasis_2 234 118 203
+            emphasis_3 30 102 245
+        }
+        ribbon_unselected {
+            base 220 224 232
+            background 76 79 105
+            emphasis_0 234 118 203
+            emphasis_1 204 208 218
+            emphasis_2 114 135 253
+            emphasis_3 234 118 203
+        }
+        ribbon_hover {
+            base 220 224 232
+            background 76 79 105
+            emphasis_0 234 118 203
+            emphasis_1 204 208 218
+            emphasis_2 114 135 253
+            emphasis_3 234 118 203
+        }
+        table_title {
+            base 64 160 43
+            background 220 224 232
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        table_cell_selected {
+            base 76 79 105
+            background 172 176 190
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        table_cell_unselected {
+            base 76 79 105
+            background 220 224 232
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        list_selected {
+            base 76 79 105
+            background 172 176 190
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        list_unselected {
+            base 76 79 105
+            background 220 224 232
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 64 160 43
+            emphasis_3 234 118 203
+        }
+        frame_selected {
+            base 64 160 43
+            background 0
+            emphasis_0 254 100 11
+            emphasis_1 4 165 229
+            emphasis_2 234 118 203
+            emphasis_3 210 15 57
+        }
+        frame_highlight {
+            base 254 100 11
+            background 0
+            emphasis_0 210 15 57
+            emphasis_1 136 57 239
+            emphasis_2 254 100 11
+            emphasis_3 254 100 11
+        }
+        exit_code_success {
+            base 64 160 43
+            background 0
+            emphasis_0 4 165 229
+            emphasis_1 220 224 232
+            emphasis_2 234 118 203
+            emphasis_3 30 102 245
+        }
+        exit_code_error {
+            base 210 15 57
+            background 0
+            emphasis_0 223 142 29
+            emphasis_1 254 100 11
+            emphasis_2 210 15 57
+            emphasis_3 4 165 229
+        }
+        multiplayer_user_colors {
+            player_1 234 118 203
+            player_2 30 102 245
+            player_3 64 160 43
+            player_4 223 142 29
+            player_5 4 165 229
+            player_6 23 146 153
+            player_7 210 15 57
+            player_8 254 100 11
+            player_9 114 135 253
+            player_10 136 57 239
+        }
+        terminal_colors {
+            black 76 79 105
+            red 210 15 57
+            green 64 160 43
+            yellow 223 142 29
+            blue 30 102 245
+            magenta 234 118 203
+            cyan 23 146 153
+            white 220 224 232
+            bright_black 108 111 133
+            bright_red 210 15 57
+            bright_green 64 160 43
+            bright_yellow 223 142 29
+            bright_blue 30 102 245
+            bright_magenta 234 118 203
+            bright_cyan 23 146 153
+            bright_white 239 241 245
+        }
+    }
+}
  
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-latte"
+theme "custom-latte"
  
 // Theme to use when the host terminal reports a dark color palette.
 // Requires `theme_light` to also be set; otherwise `theme` is used.
@@ -162,13 +318,13 @@ theme "catppuccin-latte"
 // Theme to use when the host terminal reports a light color palette.
 // Requires `theme_dark` to also be set; otherwise `theme` is used.
 // 
-// theme_light "catpuccin-latte"
+// theme_light "catppuccin-latte"
  
 // Pin the session to a dark or light appearance, ignoring what the
 // host terminal reports. When unset, the host terminal decides.
 // Options: dark, light
 // 
-// explicit_theme_hue "dark"
+// explicit_theme_hue "light"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -506,3 +662,7 @@ scroll_mode_sync false
 //   - "off" (do not forward notifications to the host terminal)
 // 
 // host_notification_protocol "auto"
+show_startup_tips false
+nested_session_handling "never"
+enforce_https_for_localhost false
+dangerously_allow_web_serving_without_a_certificate true
