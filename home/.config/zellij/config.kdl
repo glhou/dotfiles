@@ -142,7 +142,7 @@ terminal {
   padding 0
   opacity 1.0
   blur true
-  //cursor_style ="block"
+  cursor_style "block"
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
