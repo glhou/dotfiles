@@ -141,7 +141,7 @@ terminal {
   font_size 16
   line_height 1
   padding 0
-  opacity 1.0
+  opacity 0.5
   blur true
   cursor_style "block"
 }
