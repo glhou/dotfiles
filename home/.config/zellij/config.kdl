@@ -136,7 +136,7 @@ web_client {
 }
 
 terminal {
-  font "FiraCode Nerd Font SemBd"
+  font "FiraCode Nerd Font"
   font_weight "semibold"
   font_size 16
   line_height 1
