@@ -144,6 +144,7 @@ terminal {
   opacity 1.0
   opacity_mode "background"
   cursor_style "block"
+  theme "catppuccin-latte"
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
