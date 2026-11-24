@@ -159,7 +159,7 @@ terminal {
 // 
 // osc8_hyperlinks true
 themes {
-    catppuccin-latte-custom {
+    custom-latte {
         text_unselected {
             base 76 79 105
             background 239 241 245
@@ -308,7 +308,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-latte-custom"
+theme "custom-latte"
  
 // Theme to use when the host terminal reports a dark color palette.
 // Requires `theme_light` to also be set; otherwise `theme` is used.
@@ -664,3 +664,5 @@ scroll_mode_sync false
 // host_notification_protocol "auto"
 show_startup_tips false
 nested_session_handling "never"
+enforce_https_for_localhost false
+dangerously_allow_web_serving_without_a_certificate true
