@@ -145,8 +145,8 @@ terminal {
   opacity_mode "background"
   cursor_style "block"
   theme {
-    bg "#acb0be" // Surface2
-    fg "#4c4f69" // Text
+    background "#acb0be" // Surface2
+    foreground "#4c4f69" // Text
     red "#d20f39"
     green "#40a02b"
     blue "#1e66f5"
