@@ -134,6 +134,18 @@ load_plugins {
 web_client {
     font "monospace"
 }
+
+terminal {
+  font ""
+  font_size 16
+  line_height 1
+  padding 0
+  opacity 1.0
+  blur true
+  cursor_style ="block"
+  theme {
+  }
+}
  
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
