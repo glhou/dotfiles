@@ -142,6 +142,7 @@ terminal {
   line_height 1
   padding 0
   cursor_style "block"
+  terminal_requests "existing_session"
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
@@ -661,3 +662,5 @@ scroll_mode_sync false
 //   - "off" (do not forward notifications to the host terminal)
 // 
 // host_notification_protocol "auto"
+show_startup_tips false
+nested_session_handling "never"
