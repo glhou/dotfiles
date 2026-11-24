@@ -174,13 +174,13 @@ theme "catppuccin-latte"
 // Theme to use when the host terminal reports a light color palette.
 // Requires `theme_dark` to also be set; otherwise `theme` is used.
 // 
-// theme_light "catpuccin-latte"
+theme_light "catpuccin-latte"
  
 // Pin the session to a dark or light appearance, ignoring what the
 // host terminal reports. When unset, the host terminal decides.
 // Options: dark, light
 // 
-// explicit_theme_hue "dark"
+explicit_theme_hue "light"
  
 // Choose the base input mode of zellij.
 // Default: normal
