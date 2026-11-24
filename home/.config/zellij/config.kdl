@@ -143,7 +143,6 @@ terminal {
   padding 0
   opacity 1.0
   opacity_mode "background"
-  blur true
   cursor_style "block"
 }
  
