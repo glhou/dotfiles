@@ -143,7 +143,7 @@ terminal {
   padding 0
   cursor_style "block"
   terminal_requests "existing_session"
-  window_decorations fal
+  window_decorations false
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
