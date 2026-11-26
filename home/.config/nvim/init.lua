@@ -940,7 +940,8 @@ do
     formatters_by_ft = {
       lua = { 'stylua' },
       python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
-      html = { 'djlint' },
+      -- html = { 'djlint' },
+      html = 
       jinja = { 'djlint' },
       css = { 'prettier' },
       javascript = { 'prettier' },
