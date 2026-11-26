@@ -1,4 +1,5 @@
 local M = {}
+
 function M.clean()
   local log_path = vim.lsp.log.get_filename()
   local max_size = 10 * 1024 * 1024 -- 10 MB
