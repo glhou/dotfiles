@@ -888,9 +888,14 @@ do
     if vim.fn.executable 'npm' == 1 then
       vim.notify 'npm is installed'
       local packages = {
-        
+        '@vtsls/language-server',
+        'typescript',
+        '@biomejs/biome',
+        '@tailwindcss/language-server',
+        'prettier',
       }
-      vim.cmd '!npm install -g @vtsls/language-server typescript @biomejs/biome @tailwindcss/language-server prettier'
+
+      vim.fn.system { 'npm', 'install', '-g', unpack(packages) }
     else
       vim.notify "npm isn't installed"
     end
