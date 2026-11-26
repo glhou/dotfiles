@@ -36,7 +36,6 @@
 )
 
 (deflayer base
-  esc
   q w e r t y u i o p
   @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod ;
   z x c v b n m , . /
@@ -46,7 +45,6 @@
 )
 
 (deflayer numbers
-  _
   _ _ _ _ _ _ _ _ _ _
   1 2 3 4 5 6 7 8 9 0
   _ _ _ _ _ _ _ _ _ _
@@ -56,7 +54,6 @@
 )
 
 (deflayer symbols
-  _
   ! ? { } + $ grv | _ ~
   < > ( ) - = ' ; .
   _ \ [ ] / _ " # _ *
