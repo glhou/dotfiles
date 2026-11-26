@@ -890,6 +890,8 @@ do
       local packages = {
         '@vtsls/language-server',
         'typescript',
+        '@biomejs/biome',
+        '@tailwindcss/language-server',
         'prettier',
       }
 
