@@ -32,6 +32,22 @@
   ;; Layer modifiers
   num (tap-hold $tap-time $hold-time lmet (layer-while-held numbers))
   sym (tap-hold $tap-time $hold-time rmet (layer-while-held symbols))
+
+  ! S-1
+  ? S-/
+  { S-[
+  } S-]
+  + S-=
+  $ S-4
+  | S-\
+  ~ S-grv
+  < S-,
+  > S-.
+  ( S-9
+  ) S-0
+  " S-'
+  # S-3
+  * S-8
 )
 
 (deflayer base
