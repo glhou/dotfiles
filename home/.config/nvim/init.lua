@@ -855,7 +855,7 @@ do
     },
   })
 
-  vim.lsp.enable { 'ruff', 'biome', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
+  vim.lsp.enable { 'ruff', 'biome', 'vtsls', 'jinja_lsp', 'gopls', 'rust_analyzer', 'lua_ls', 'goimports' }
   vim.lsp.enable 'pyrefly'
   -- vim.lsp.enable 'ty'
 
