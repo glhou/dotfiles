@@ -1,3 +1,4 @@
+local M = {}
 function clean_lsp_logs()
   local log_path = vim.lsp.log.get_filename()
   local max_size = 10 * 1024 * 1024 -- 10 MB
@@ -6,3 +7,5 @@ function clean_lsp_logs()
 
   if stat and stat.size > max_size then vim.fn.writefile({}, log_path) end
 end
+
+return M
