@@ -1076,7 +1076,7 @@ do
   require('custom.modules.marks').setup { switch_marks = false, marko = true }
   require('custom.modules.py_refactory').setup()
   require 'custom.modules.term_ctrl_s'
-  require('conform.formatters.uncrustify').clean()
+  require('custom.functions.clean_lsp_logs').clean()
   require 'custom.plugins'
 end
 
