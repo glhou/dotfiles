@@ -1,6 +1,6 @@
 (defcfg
   process-unmapped-keys yes
-  tap-hold-require-prior-idle 170
+  tap-hold-require-prior-idle 200
 )
 
 (defsrc
@@ -13,8 +13,8 @@
 )
 
 (defvar
-  tap-time 170
-  hold-time 170
+  tap-time 200
+  hold-time 200
 )
 
 
