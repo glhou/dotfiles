@@ -941,10 +941,11 @@ do
       lua = { 'stylua' },
       python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
       -- html = { 'djlint' },
-      html = 
+      html = { 'prettier' },
       jinja = { 'djlint' },
       css = { 'prettier' },
-      javascript = { 'prettier' },
+      javascript = { 'biome' },
+      javascriptreact = { 'biome' },
       typescript = { 'prettier' },
       json = { 'prettier' },
       sh = { 'shfmt' },
