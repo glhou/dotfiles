@@ -9,6 +9,7 @@
   a s d f g h j k l ;
   z x c v b n m
   spc
+  caps
   lmet rmet
   f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
 )
@@ -41,6 +42,7 @@
   @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod ;
   z x c v b n m
   spc
+  `
   @num @sym
   🔅 🔆 nop0 nop1 nop2 nop3 ◀◀ ▶⏸ ▶▶ 🔇 🔉 🔊
 )
