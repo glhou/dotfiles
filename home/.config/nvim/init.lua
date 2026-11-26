@@ -887,8 +887,7 @@ do
     end
     if vim.fn.executable 'npm' == 1 then
       vim.notify 'npm is installed'
-      vim.cmd '!npm install -g @vtsls/language-server typescript'
-      vim.cmd '!npm -g eslint vscode-langservers-extracted'
+      vim.cmd '!npm install -g @biomejs/biome typescript'
     else
       vim.notify "npm isn't installed"
     end
