@@ -57,9 +57,9 @@
 
 (deflayer symbols
   _
-  _ grv til ! @ _ lbrc rbrc paren-l paren-r
-  _ # $ % ^ & - \ = +
-  _ * _ _ _ _ _ _ _ _
+  ! ? { } + $ grv | _ ~
+  < > ( ) - = ' ; .
+  _ \ [ ] / _ " # _ *
   _
   _ _
   _ _ _ _ _ _ _ _ _ _ _ _
