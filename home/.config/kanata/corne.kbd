@@ -18,6 +18,7 @@
   hold-time 170
 )
 
+
 (defalias
   ;; Home row mods
   a-mod (tap-hold $tap-time $hold-time a lmet)
@@ -28,20 +29,19 @@
   j-mod (tap-hold $tap-time $hold-time j rctl)
   k-mod (tap-hold $tap-time $hold-time k rsft)
   l-mod (tap-hold $tap-time $hold-time l ralt)
-  ;-mod (tap-hold $tap-time $hold-time ; rmet)
 
-  ;; Layers
-  num (tap-hold $tap-time $hold-time esc (layer-while-held numbers))
-  sym (tap-hold $tap-time $hold-time spc (layer-while-held symbols))
+  ;; Layer modifiers
+  num (tap-hold $tap-time $hold-time lmet (layer-while-held numbers))
+  sym (tap-hold $tap-time $hold-time rmet (layer-while-held symbols))
 )
 
 (deflayer base
   esc
   q w e r t y u i o p
-  @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod
+  @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod ;
   z x c v b n m
-  @sym
-  @num
+  spc
+  @num @sym
   🔅 🔆 nop0 nop1 nop2 nop3 ◀◀ ▶⏸ ▶▶ 🔇 🔉 🔊
 )
 
