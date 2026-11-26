@@ -39,7 +39,7 @@
   esc
   q w e r t y u i o p
   @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod ;
-  z x c v b n m
+  z x c v b n m , . /
   grv
   @num @sym
   🔅 🔆 nop0 nop1 nop2 nop3 ◀◀ ▶⏸ ▶▶ 🔇 🔉 🔊
@@ -50,7 +50,7 @@
   _ _ _ _ _ _ _ _ _ _
   _ _ _ _ _ _ 7 8 9 _
   _ _ _ _ _ _ 4 5 6 _
-  _ _ _ _ _ 1 2 3
+  _ _ _ _ _ _ 1 2 3 _
   _
   _ _
   _ _ _ _ _ _ _ _ _ _ _ _
@@ -61,7 +61,7 @@
   grv til ! @ # $ % ^ & * 
   _ _ _ _ _ _ lbrc rbrc paren-l paren-r
   _ _ _ _ _ _ - _ = +
-  _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _
   _
   _ _
   _ _ _ _ _ _ _ _ _ _ _ _
