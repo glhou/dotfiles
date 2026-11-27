@@ -33,6 +33,7 @@ pre-commit =  "latest"
 "npm:@biomejs/biome" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 "npm:prettier" = "latest"
+opencode = "latest"
 
 [dotfiles]
 "~/.config/aerospace" = { mode = "track" }
